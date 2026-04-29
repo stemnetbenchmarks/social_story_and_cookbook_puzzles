@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Visual Novel Browser</title>
+        <link rel="stylesheet" href="/web/vn.css" />
+    </head>
+    <body>
+        <!--
+            Page layout (version 5)
+            -----------------------
+
+                #page_root            flex column, fills the viewport
+                  #main_scene         flex: 1 1 auto  (the 3-column scene)
+                    #avatar_sidebar
+                    #center_content_panel
+                      #center_map_region
+                      #center_dialogue_region
+                    #map_sidebar
+                  #control_bar        flex: 0 0 auto  (bottom transport bar)
+                    #prev_button
+                    #pause_or_resume_button
+                    #next_button
+
+            #main_scene is unchanged from version 4. The control bar is
+            a sibling of #main_scene, not a child, so it cannot perturb
+            the three-column flex math inside the scene.
+
+            Exactly one of #center_map_region and #center_dialogue_region
+            is visible at a time, controlled by a CSS class on
+            #main_scene set from vn.js (frame_kind_generic_map vs
+            frame_kind_player_turn).
+        -->
+        <div id="page_root">
+            <div id="main_scene" class="frame_kind_player_turn">
+                <aside id="avatar_sidebar">
+                    <img
+                        id="avatar_image"
+                        alt="player avatar (image not yet loaded)"
+                        src=""
+                    />
+                    <div id="player_id_label"></div>
+                </aside>
+
+                <main id="center_content_panel">
+                    <section id="center_map_region">
+                        <pre id="center_map_text"></pre>
+                    </section>
+
+                    <section id="center_dialogue_region">
+                        <div id="dialogue_header_line"></div>
+                        <pre id="action_summary_text"></pre>
+                        <pre id="note_share_memo_text"></pre>
+                        <div id="progress_indicator"></div>
+                    </section>
+                </main>
+
+                <aside id="map_sidebar">
+                    <pre id="pov_map_text"></pre>
+                </aside>
+            </div>
+
+            <!--
+                The transport bar. Buttons use plain Unicode glyphs so
+                no font or icon library is downloaded. Initial label of
+                #pause_or_resume_button reflects the initial state
+                (auto-advance running), and is updated from vn.js by
+                update_pause_resume_button_label() whenever the state
+                changes.
+            -->
+            <div id="control_bar">
+                <button
+                    id="prev_button"
+                    type="button"
+                    title="Show the previous frame"
+                >
+                    ◀ prev
+                </button>
+
+                <button
+                    id="pause_or_resume_button"
+                    type="button"
+                    title="Pause or resume the 7-second auto-advance"
+                >
+                    ⏸ pause
+                </button>
+
+                <button
+                    id="next_button"
+                    type="button"
+                    title="Show the next frame; if at the end, fetch from the server first"
+                >
+                    next ▶
+                </button>
+            </div>
+        </div>
+        <script src="/web/vn.js"></script>
+    </body>
+</html>
