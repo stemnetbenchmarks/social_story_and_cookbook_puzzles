@@ -2,14 +2,14 @@
 
 (under construction)
 
-AI RPG-Arena:
+# AI RPG-Arena:
 Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
 for Teaching, Training and Evaluation
 
-A testing/training framework set, including a Table-top-like Mini-RPG for single-player, or multi-player, or AI-Bots. 
+### A testing/training framework set, including a Tabletop-like 
+Mini-RPG for people or for AI-Bots. 
 
 2024.05-06.22, 2026.04.21 G.G.Ashbrook
-
 
 
 
@@ -28,9 +28,8 @@ This study is part of a layered puzzle of stories, skills, and learning and laye
 7. Links & References
 
 Appendix 1: Discussion
-Appendix 2: Sample Starting Instructions
-Appendix 3, Sample Bot Shared Memos:
-
+Appendix 2: The Game Rules, Sample Starting Instructions
+Appendix 3: Sample Bot-Shared Memos
 
 
 # Introduction
@@ -45,13 +44,15 @@ How is a marketplace like, and how unlike, a dungeon for adventurers? In real-wo
 
 
 #### Dungeon Crawling (in summary)
-There are two main ways to play through the RPG game.
+There are two main ways to play through the Mini-RPG game.
 
-1. You can play manually yourself (or with a team) using a python-notebook (or cli), which does not require anything aside from a computer with python installed (linux, bsd, MacOS should be fine (ms-windows...should work as well as windows ever works), or a google-colab notebook will run on any online device with a current browser (even a phone or tablet), (and you need a google-account to run colab).
+1. You can play manually yourself (or with a team), iterating through each round of play entering in the turns that each player will take in the next round (much like a table-top RPG where players might state their actions before the Dungeon-Master/Game-Master calculates the effects of all the players and non-players taking their actions. You can do this using a python-notebook (or in cli), which does not require anything aside from a computer with python installed (linux, bsd, MacOS should be fine (ms-windows...should work as well as windows ever works), or a google-colab notebook will run on any online device with a current browser (even a phone or tablet), (and you need a google-account to run colab). I recommend that you play the game through at least once this way to get a hands-on understanding of how the dungeon rules work and the nuances of what individual AI-Bots need to figure out together.
 
-2. Play the AI-Bot-Arena (for which you will need a model-api (currently set up to use Mistral-api)):
-- A. Play using a notebook (or cli), and you can view the results as an RPG-Screenplay HTML file, seeing what the GM/DM each player says and chooses (for each iteration of planning and each round of actions taken).
-- B. View the game in real-time (or afterwards) as a (minimalist) Visual-Novel, using the code in /rpg_visual_novel_ui). See: https://github.com/lineality/rpg_visual_novel_ui 
+2. You can run the AI-Bot-Arena (for which you will need a model-api (currently set up to use api from Mistral, Anthropic, or Google)):
+- Option A. Play using a notebook (or cli), and you can view the results as an RPG-Screenplay HTML file, seeing what the GM/DM each player says and chooses (for each iteration of planning and each round of actions taken).
+- Option B. View the game in real-time (or afterwards) as a (minimalist) Visual-Novel, using the code in /rpg_visual_novel_ui). See: https://github.com/lineality/rpg_visual_novel_ui 
+
+Either the Screen-Play-Script, or the Visual-Novel, should hopefully make following each Player-Bot's decisions more user-friendly (and the logs files are there to inspect as well, including the output that did not contain valid move choices).
 
 
 # Functionality
@@ -102,36 +103,38 @@ But we can look at these logistics-puzzles in a less abstract and more relatable
 
 Let's try to add something else to our stew of puzzles, to the 'problem-space' of these puzzle-stories. Even the shop-logistics puzzles are still 'introverted tasks' in a way, steps one person can read and carry out from a cookbook's list of instructions, regardless of everything else that's going on in the bustling market and during the lunch rush at the cafe. Fortunately we (on Earth) have a widely known type of game that we can use if we want to make something that is a bit more of a creative-problem-solving challenge, and something that requires the players to work together and coordinate more directly (Coordinated-decisions studies!), not merely in abstract results, something that really requires people to plan and act in communication and in alignment with each-other. We have table-top Role Playing Games; we have players on a dungeon crawl.
 
-
-The Crawl: You are in a dungeon of rooms. You need to decide where to go, get past the monsters, get to the treasure, work together, use a 'system-mechanic' of spells, keep your health-level above zero, and participate with others in a turn-based system. While not as technically dexterous as the "pointless puzzles," these social-story puzzles exist more in the space of coordinated planning and decision making (of project management).
+### The Crawl: 
+You are in a dungeon of rooms. You need to decide where to go, get past the monsters, get to the treasure, work together, use a 'system-mechanic' of spells, keep your health-level above zero, and participate with others in a turn-based system. While not as technically dexterous as the "pointless puzzles," these social-story puzzles exist more in the space of coordinated planning and decision making (of project management).
 
 Social stories and logistics are rather intertwined, but in some cases we can make the distinction that separates plan-invention (or solution-discovery), importantly including the problem spaces of information-sharing and coordination-decisions from a problem space that only includes instruction-following and solution-implementation. 
 
-In some ways there seems to be no clear dichotomy between social story puzzles and introverted logistics tasks. If you break everything down into a pile of steps then everything looks like a pile of steps. And if you look at a logistics puzzle through the context of a village marketplace then it looks like a social story. But in other ways there are differences between linear-cookbook tasks that have one process and one solution (move three eggs (or bites) from this array to that), vs. open ended problem solving where there are many (maybe infinitely many) viable solutions to the same problem. I would also question whether multi-participant-interdependent actions can or should be broken down into introverted tasks. Using dynamic feedback within a process is likely not always just another linear step in a pile of linear steps. And it is not clear how much different contexts and details matter for real world skill building and skill retention. Scalability, modularity, coordinated decisions, and various levels of perception and articulation of project-area parts are all key factors in the skills, fitness, and best practice needed to complete projects, and for a diagnostic understanding how projects fail and systems collapse. 
+In some ways there seems to be no clear dichotomy between social-story-puzzles and introverted-logistics tasks (as I nick-name them here, suggesting or presuming there is a difference between the two). If you break everything down into a pile of steps then everything looks like a pile of steps. And if you look at a logistics puzzle through the context of a village marketplace then it looks like a (it is a kind of) social story (with the same Alice, Bob, Cat, Dog, Eretosthenes cast of players, each doing their interlocking roles). But if you change the context then two seem more different, for example: Is there a problem to solve? The Dungeon Crawl poses a problem: How can you get the monster, get the treasure, and all walk out of the room? There is (presumably) no passive way to survive the dungeon; there is no dungeon cookbook. For the logistics market-restaurant-story puzzle, each player has a list of tasks to follow, but there is no 'problem' to solve. In fact, you do not even know what the result of the cookbook recipe will be until you follow all the steps.
+
+We have the linear-cookbook tasks on the one hand where the solution is implementing one (cookbook recipe) logistics-process where there is effectively one correct or faithful "solution" (move three eggs (or bits) from this array to that), but it does not involve discovering the solution to a problem so much as following established steps. Sometimes this distinction of 'tracking logistics' vs. 'Finding a solution' seems non-existent, other times it seems more tangible. Even though both are Alice, Bob, and friends team projects, one context is to look at communication and decision. Even though in both types of puzzles each player tracks the moving logistics and follows along, in the 'pointless' logistics (marketplace, kitchen cookbook) type of puzzle there is no need for communication, and 'decision' is a perhaps misleading term for implementing the instructions that were already provided (the cook book recipe). On the other hand we have 
+social-story open ended problem-solving where there are many (maybe infinitely many) viable solutions to each problem. The problem space in a social story puzzle is not A. 'follow instructions' vs. B. 'fail to follow instructions,' each player and on an aggregate level the project-team as a whole, needs to navigate through a problem space of multiple possible correct or incorrect solutions, where they are not told which is which (or even what those solutions are). In some (perhaps unrealistic cases) each player has full information about the game, but more realistically the problem space involves coordinating to share that basic information across the players. 
+
+Where we have what in English we would call 'a problem to solve' the problem-space includes a Hayekian-signal-ecosystem (though ironically the logistics puzzles appear to resemble introverted isolated tasks in a marketplace, after the origin of those steps has been abstracted away).
+
+I would also question whether multi-participant-interdependent actions can or should be broken down into introverted tasks (such as characterizing both types of puzzles as identical introverted-unilateral array-value shuffling actions). Using dynamic feedback within a process is likely not always just another linear step in a pile of linear steps. And it is not clear to what extent different contexts and details matter for real world skill building and skill retention. Scalability, modularity, coordinated decisions, and various levels of perception and articulation of project-area parts are all key factors in the skills, fitness, and best practice needed to complete projects, and for a diagnostic understanding how projects fail and systems collapse. (It is also a towering irony here that the software industry and computer science spent fifty years in shambles, doubling down strong-and-wrong on the cult of anti-communication. Practices like Agile (though the kanban-board predates software) will hopefully apply STEM to the need for better managed projects, but as of 2026 the rebellion against project management is still in overwhelming majority.) 
 
 
 #### Increasing a Need for Coordination
-There are many possible ways that the RPG world and system-mechanic could be configured to require more coordination between players (beyond the element-resonance system itself). Several of these are listed in the code-notebook, though most are not yet implemented. One that has been included is based on perception.
+There are many possible ways that the RPG world and system-mechanic could be configured to require more coordination between players (beyond the element-resonance system itself). Several of these are listed in the code-notebook. Though most are not yet implemented, one that has been included is based on perception.
 
-When you set up the dungeon room, you can pick between letting all the players see the whole room, or a limited-visibility restricting what each person can see from where they stand (as if the room is full of thick pillars and you can only see down clear straight rows North, South, East, and West). 
+When you set up the dungeon room, you can pick between letting all the players see the whole room, or having a limited-visibility environment restricting what each person can see from where they stand (as if the room is full of thick pillars and each player can only see down clear straight rows North, South, East, and West). 
 
-This requires players to exchange information about where things are in the room, information that only they may have. This is even more of a classic 'cut-up' puzzle where team-members need to share information  about the puzzle itself to co-discover how it can be solved. 
+This requires players to exchange information about where things are in the room, information that only they may have. This is even more of a classic 'cut-up' puzzle where team-members need to share information  about the puzzle itself to co-discover how the puzzle can be solved. 
 
 ### Chess & RPG
-As somehow chess finds a way into many AI discussions: In keeping with the empirical 'pen and paper,' 'tabletop,' nature of many RPG games, this 8x8 grid and 5-player system is compatible with... a physical chess board and pieces. This mini-RPG can be played as a physical board game using a chess set (e.g. each player is one type of e.g. black piece, and the mobs, treasure, NPC, objects are  white pieces). 
-
+As somehow chess finds a way into many AI discussions: In keeping with the empirical 'pen and paper,' 'tabletop,' nature of many RPG games, this 8x8 grid and 5-player system is compatible with... a physical chess board and pieces. This mini-RPG can be played as a physical board game using a chess set. For example, you could have each player be one type of black piece (of which there are five shapes), and the mobs, treasure, NPC, objects can be white pieces. 
 
 #### To Recap:
-
 A "pointless puzzle" is more of a 'can you follow directions' puzzle, rather than a, 'plan what the directions should be for this open-ended situation' puzzle. Both are very important, but they are also importantly different from each other.
 
 These social story puzzles are still meant to primarily be abstract tests (they are not designed to be consumer-attractive products), but they should retain some elements of the kind of story-space and socially found solution that a tabletop RPG has.
 
 
-
-
 # Training & Testing
-
 These puzzles can be used to either test or train:
 1. Individual people (for example in an educational settings)
 2. Teams of people as in a classic student-centered/constructivist 'cut-up' activity involving team-project sharing of information of group planning, (for example in educational settings)
@@ -141,41 +144,39 @@ These puzzles can be used to either test or train:
 
 
 # Projects:
-Not surprisingly, this study is also interrelated with project-spaces, coordinated-decisions, hybrid data, project-object-databases, etc.:
+Not surprisingly, this study is interrelated with project-spaces, coordinated-decisions, hybrid data, project-object-databases, etc.:
 
 - Definition Behavior Studies: https://github.com/lineality/definition_behavior_studies
-
-- Hybrid (structured and unstructured data) https://github.com/lineality/hybrid_data 
 
 - Project Areas (and project management):  https://github.com/lineality/project_areas_for_project_and_product_management 
 
 - Coordinated Decisions: https://github.com/lineality/Networked_Voting_and_Decisions_Including_One_Time_Pads 
 
-- Uma & T is for Task:
+- Hybrid (structured and unstructured data) https://github.com/lineality/hybrid_data 
+
+- Uma & T is for Task (still in progress):
 https://github.com/lineality/uma_productivity_collaboration_tool/blob/main/t_is_for_task.md 
 
 
 # Future Research
 
 1. Automated Mistake Analysis
-One area that might be very important, but which is not elaborated on here, is: Generating Error-Mistake-Analysis-Data Per-Puzzle
+One area that might be very important, but which is not elaborated on here, is Generating Error-Mistake-Analysis-Data Per-Puzzle
 
-If more-so for logistics-puzzles, it should be possible to generate some level of (reliable) automatic reporting on what went wrong with the proposed solution. This may be important to go along with raw-error data for learning processes (for people and robots (as far as we can continue to make that distinction)).
+If more-so for logistics-puzzles, it should be possible to generate some level of (reliable) automatic reporting on what went wrong with a proposed solution. This may be important to go along with raw-error data for learning processes (for people and robots (as far as we can continue to make that distinction)), as well as a unit-testing type error diagnostic that is useful to have.
 
 2. Evidence-Based Optimal Learning Patterns (for people)
 
 3. Is there a way that raw concept-vectors might be used to map aspects of this problem space, or other non-generative models? (Trying a standard reinforcement soccer-football-game approach?)
 
-4. User Interface: While in many ways pouring time and computer into fancy 'graphics' is not constructive, finding the right balance of a proportionate and maintainable interface that allows users to see, understand, and interact with the process and the code is useful. 
+4. User Interface: While in many ways pouring time and compute into fancy 'graphics' is not constructive, finding the right balance of a proportionate and maintainable interface that allows users to see, understand, and interact with the process and the code is useful. How can more groups of people comfortably work hands on with this problem space? 
 
 5. Are there other coordination elements that correspond with key not-automatically-learned-skills that can be added so that more evaluation and training detail and value are possible?
 
-
-#### Curricula: skills, training, fitness, feedback: 
-Where coordination skills are important for all people to have (which I think is 'everywhere'), where methods work best (broadly or in what specific contexts such as specific groups or demographics of people) to either most quickly or with best long term retention improve test-able group project collaboration and coordination skills?
+6. Curricula: skills, training, fitness, feedback: Where coordination skills are important for all people to have (which I think is 'everywhere'), where methods work best (broadly or in what specific contexts such as specific groups or demographics of people) to either most quickly or with best long term retention improve test-able group project collaboration and coordination skills?
 
 # Sport vs. Sportsmanship
-There is much more to games and puzzles than antisocial, predatory,  sport-thrill-seeking behavior. Publishers of games should have the spine to emphasize more enriching content, not a race to the bottom, least common denominator, contraction into ever less mindful and ever more escalating trauma-disturbance. Institutions, academics, and STEM areas should all do more to utilize and emphasize the constructive uses of stories, games, puzzles, and worlds. From therapy, to education, to team projects, to the uses of feedback, conceding all of gaming to criminality is a concession too far.
+There is much more to games and puzzles than antisocial, predatory,  sport-thrill-seeking behavior. Publishers of games should have the spine to emphasize more enriching content, not a race to the bottom, least common denominator, contraction into ever less mindful and ever more escalating trauma-disturbance. Institutions, academics, and STEM areas should all do more to utilize and emphasize the constructive uses of stories, games, puzzles, and worlds. From therapy, to education, to public and private sector team projects, to the uses of feedback, conceding all of gaming to criminality is a concession too far.
 
 On many levels, people of all ages and across disciplines may find something of interest in the code and questions here. With the feedback from hands-on projects done together there is inestimably more than in the isolation of compartmentalized silent conjectures trapped in a psychological dungeon of desks and cubicles. Find the doors.
 
@@ -348,9 +349,7 @@ definition behavior studies, object relationship spaces, coordinated-decision sy
 Note: This project punts on the question of ever-growing state, but having a more or less static 'history' that is passed along regardless of how long the process is.
 
 
-
 ### Opportunities To Observe Failure
-
 Being able to adapt based on feedback information from past (including real-time) errors and mistakes is of the highest value. An absence of mistakes is not a learning event, it is a most-dangerous potemkin village.
 
 Let's take the example of putting two students in front of one computer, each having a 'mouse.' At first this looks like a 'disorderly event' as the students fail to coordinate and communicate about where the mouse pointer should go. The false-solution that most schools apply is to put significant resources into preventing learning-events such as this from ever happening, silo-ing students into individual work or fake 'safe group activities' that are designed to have high entertainment-viewing value for adults as the illusions of the potemkin village create a 'better than life' virtual reality in which students are harmoniously skilled at coordination and project skills. Then those students become adults in a depraved world of cargo-cults that have low or no fitness and few or no concepts of coordination and project skills, which is exactly what was planned and implemented by their education. As in this classic tragedy of the commons, does anyone benefit from this routine in the long term?
@@ -371,7 +370,6 @@ This is not directly related to this scope at all, but it is fascinating for lea
 
 
 ### Story & Game
-
 Especially because this is a data-analysis and skill-evaluation tool, the scope needs to be (potentially) as focused and clear as possible.
 
 There are at least two kinds of topics colliding here:
@@ -404,13 +402,13 @@ There are various little tools that can help to extend the the dungeon room modu
 
 Such as dungeon level makers.
 
-For example, where 'P' is the party of players, 'O' is doorway into a dungeon room (the main game-play focus), and 'S' is the stairwell down to the next level of the dungeon (and 'X' is whatever the DM/GM wants it to be for the story, if anything). 
+For example, where # is a stone wall, 'P' is the party of players, 'O' is doorway into a dungeon room (the main game-play focus), and 'S' is the stairwell down to the next level of the dungeon (and 'X' is whatever the DM/GM wants it to be for the story, if anything). 
 
 
 And 'walk in fog' tools, so players can only see what is visible so far on that dungeon level.
 
 
-If you wanted to make or automate level-rules, you could say something like:.you need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room... or something.
+If you wanted to make or automate level-rules, you could say something like: "You need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room..." or something.
 
 While moot in 2006 because AI cannot complete a single room, ideally AI will improve in future and it will then be useful to have a kind of AI-RPG-Arena Index/Benchmark, to standardize how many levels a model can complete.
 
@@ -473,7 +471,7 @@ Both for students and as another model-test, making-the-testing-system is of val
 
 Given that public renewed interest in AI is only about three years old as of 2026, it remains to be seen whether difficulties in understanding core concepts about STEM as applied to machine learning will continue to be a problem. History may suggest that this is likely to be (that it already has very long been, see links below) a persistent challenge.
 
-Many times I have seen not only sales-people (who arguably don't know better) but also highest level engineers (who really ought to know better) describing pre-trained models as dynamically learning products. If this is a problem in adult upper management and engineering, how are children being taught (or not taught, or incorrectly taught) these concepts about tools they need to learn how to use? 
+Many times I have seen not only sales-people (who arguably do not know better) but also highest level engineers (who really ought to know better) describing pre-trained models as dynamically learning products. If this is a problem in adult upper management and engineering, how are children being taught (or not taught, or incorrectly taught) these concepts about tools they need to learn how to use? 
 
 In this context it may be useful to have educational activities that teach people in a focused an hands-on way (ideally in a team-context) some of the practical details of STEM. 
 
@@ -720,14 +718,14 @@ My character, **Cinder**, is a fiery adventurer wielding a **flaming greatsword*
 I'll **move to [1,7]** to stand adjacent to the void NPC (ID 2) and **absorb it** via resonance. This will remove it from the board and free up space for me to claim the treasure later.
 
 ---
-'''json
+```json
 {
     \"player_id\": \"c\",
     \"action_type\": \"move\",
     \"move_from_coord\": [4, 7],
     \"move_to_coord\": [1, 7]
 }
-'''
+```
 
 ---
 **Memo to Team-Mates:**
@@ -741,21 +739,20 @@ I'll **move to [1,7]** to stand adjacent to the void NPC (ID 2) and **absorb it*
 - Remember: **fire helps void, harms ice, and helps forest**. Use resonance wisely!
 
 ---
-'''json
+```json
 \"start_round\": true
-'''"
 ```
 
 ### Player e — Shared Memo:
-```
 
-'''json
+
+```json
 {
     "player_id": "e",
     "action_type": "skip_turn",
     "start_round": true
 }
-'''
+```
 
 ---
 
@@ -781,7 +778,8 @@ I'll **move to [1,7]** to stand adjacent to the void NPC (ID 2) and **absorb it*
 **Stickers Earned:** ✨ *[Imaginary sticker of a fox pawprint]* ✨
 *(For strategic patience and elemental lore-keeping.)*
 
-```
+
+
 
 
 
