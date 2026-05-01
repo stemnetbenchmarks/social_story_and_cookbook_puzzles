@@ -6,8 +6,7 @@
 Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
 for Teaching, Training and Evaluation
 
-### A testing/training framework set, including a Tabletop-like 
-Mini-RPG for people or for AI-Bots. 
+### A testing/training framework set, including a Tabletop-like Mini-RPG for people or for AI-Bots. 
 
 2024.05-06.22, 2026.04.21 G.G.Ashbrook
 
@@ -50,7 +49,7 @@ There are two main ways to play through the Mini-RPG game.
 
 2. You can run the AI-Bot-Arena (for which you will need a model-api (currently set up to use api from Mistral, Anthropic, or Google)):
 - Option A. Play using a notebook (or cli), and you can view the results as an RPG-Screenplay HTML file, seeing what the GM/DM each player says and chooses (for each iteration of planning and each round of actions taken).
-- Option B. View the game in real-time (or afterwards) as a (minimalist) Visual-Novel, using the code in /rpg_visual_novel_ui). See: https://github.com/lineality/rpg_visual_novel_ui 
+- Option B. View the game afterwards (or potentially in real-time) as a (minimalist) Visual-Novel, using the code in /rpg_visual_novel_ui). See: https://github.com/lineality/rpg_visual_novel_ui 
 
 Either the Screen-Play-Script, or the Visual-Novel, should hopefully make following each Player-Bot's decisions more user-friendly (and the logs files are there to inspect as well, including the output that did not contain valid move choices).
 
@@ -391,41 +390,67 @@ https://github.com/lineality/story_rpg_platform
 
 
 ### Back to Tabletop
-If this mini-RPG framework were used for a tabletop-game(as in theory it could be useful to have as an extremely portable, easy to set-up, quick-start table-top dungeon-crawl system that can be used with nearly zero set up time) are there additions or techniques that might help to emphasize the human story and to keep the game from becoming a story-less logic puzzle? 
+This report started out describing a computer-based RPG-game (one inspired by tabletop games) to be used for analysis. What if we try to step fully through that door that we wedged a foot into? 
+- Could this Mini-RPG be used for a primarily-story-based game for people? 
+- Could this Mini-RPG be played as a quick-start Tabletop RPG? 
+- Could this single-room focused game be elegantly or simply expanded into a full multi-level-dungeon game (either for people or as a larger Bot-Test? 
 
-- Hallway vs. room guidelines
-- maybe floor-map generation tools...
-- ways to work equipment, familiar, accessories, clothing into the game (may be ways for DM/GM to frame resonance)
+There are a few (somewhat intersecting) directions this expansion could take. 
 
-There are various little tools that can help to extend the the dungeon room module into a levels of dungeon tool-kit:
-- https://github.com/lineality/dungeon_fog_cli 
+One is a very-portable Dungeon-Crawl for people who want to play an in-person game without the set-up time that many tabletop games require. The emphasis here is probably on practical ease rather that ideological-minimalism (strictly only graph paper and number-2 pencil). Having a chess set, some pens and paper, and a laptop should usually be easy to get without expense on short notice.
 
-Such as dungeon level makers.
+Groups playing online is also something that is more cumbersome than it *should* be. 
 
-For example, where # is a stone wall, 'P' is the party of players, 'O' is doorway into a dungeon room (the main game-play focus), and 'S' is the stairwell down to the next level of the dungeon (and 'X' is whatever the DM/GM wants it to be for the story, if anything). 
+Either way, it would be useful to manage levels of dungeon rooms. In the notebook (and some in their own repos), there are various little tools that can help to extend the room-module into more of a full dungeon tool-kit. See: https://github.com/lineality/dungeon_fog_cli 
 
-
-And 'walk in fog' tools, so players can only see what is visible so far on that dungeon level.
+#### Dungeon Level Makers & Viewers:
+dungeon_fog_cli contains two parts, a hallway of doors (a level) generator, and a point-of-view manager so that the players only see what is nearby (or past) in the dungeon maze.
 
 
-If you wanted to make or automate level-rules, you could say something like: "You need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room..." or something.
+In this example, # is a stone wall, 'P' is the party of players, 'O' is doorway into a dungeon room (the main game-play focus), a period (.) is position along the hall (could be blank, but easier to count with a dot), and 'S' is the stairwell down to the next level of the dungeon (and an optional 'X' is whatever the DM/GM wants it to be for the story, if anything). 
+
+
+
+With the 'walk in fog' tool, players see further as they walk (with ~ or whatever you choose for the unknown regions). 
+
+
+There is no single way to do rules for level, but there are some obvious simple options. E.g. 
+- "You need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room." 
+- "For each level you need that many keys from treasure chests to go down to the next level.
+
+
+The story part of the game is both speculative-here and subjective, different people gravitate towards (and prefer) different types of games. While very speculative, I think it would be interesting to experiment with a system-mechanic that is:
+1. not level-based or even progression based
+2. requires coordination and planning, not luck or high-level-ness
+3. very story flexible / not highly detailed
+
+A perhaps contrary aspect is that each of the five players must be assigned a different element (perhaps randomly assigned). But within that framework the player (and the GM/DM) can make up whatever story fits over the very simple skeleton of the player, NPC and other object elements. Just as characters can create whatever backstory and details for their character. What would the story-play-experience be like for the people if a wide range of 'story rationalization' was compatible with the sparse rules? Clothing, items, companion-animals, spells, weapons, skills, game-props, etc., could be anything that describes an intended action and whatever the effects turned out to be.
+
+It may not work to go this far in the opposite direction of level-based unilateral action realism, but that direction of chasing ever higher detail combat-simulation has broadly led to a both reduction in story and character and a rejection of that lack of artful character by many players.
+
+Are there additions or techniques that might help to emphasize the human story and to keep the game from becoming a story-less logic puzzle? Are there ways of forming a puzzle-grammar to, for example the situational-puzzles set up systematically in Shakespeare plays? Hopefully people in the future will have more data to work with.
+
+
+#### To have a fully structured full-dungeon for a Bot-Test:
 
 While moot in 2006 because AI cannot complete a single room, ideally AI will improve in future and it will then be useful to have a kind of AI-RPG-Arena Index/Benchmark, to standardize how many levels a model can complete.
 
-#### Simple RPG-Arena-Index Rules v1
+##### Simple RPG-Arena-Index Rules v1
 1. N = Dungeon-Level number (starting at 1)
-2. Randomly degenerated Dungeon-Level is size: width=N,height=N,
-3. Complete all rooms on Dungeon-Level
-4. Dungeon-Level is completed by descending stairs.
-5. A model's level/rank/index is the highest N that the model can complete, out of N tries.
+2. Each room and level is randomly generated with a timestamp seed.
+3. Randomly generated Dungeon-Level is size: width=N,height=N,
+4. Complete all rooms on Dungeon-Level
+5. Dungeon-Level is completed by descending stairs.
+6. A model's level/rank/index is the highest N that the model can complete, out of N tries.
+
+
 
 
 ### Five Types of Project Puzzles & Side-Games
-
 This is not a clean list of categories on a uniform axis, but it might help to list out some of the various spaces of operational-features:
 
 1. Bitwise Boolean
-The most basic logic and boolean operations.
+The most basic logical and boolean operations.
 
 2. Numbers
 Operations on numbers.
@@ -434,14 +459,14 @@ Operations on numbers.
 String operations.
 
 4. 8x8
-- 2D special rule games such as tic-tac-toe, connect-four, checkers, chess, iGo, etc.
+2D special rule games such as tic-tac-toe, connect-four, checkers, chess, iGo, etc.
 
 5. Mini-RPG Dungeon Crawl
 With a small number of rules, a multi-player dungeon-crawl can take place on an 8x8 grid with as few as 7 numbered objects on the board. This opens up the project space to coordinated decisions, cut-up puzzles, strategy and tactics, etc., as well as less-minimal RPG game and puzzle elements.  
 
 
 ### Combined:
-Types of puzzles do not have to be diverging (and disconnected from each-other), mini-game puzzles within puzzles are well established in games.
+Different types of puzzles do not have to be disconnected from each-other; mini-game puzzles within puzzles are well established in games.
 
 Various types of puzzles could be combined:
 - Opening a chest could involve a pointless-puzzle / 8x8 'puzzle'
@@ -451,7 +476,7 @@ Various types of puzzles could be combined:
 - Keys, traps, etc.
 
 Also See:
-- Sume-go puzzles
+- Tsumego puzzles
 
 
 ### Make the Maker:
@@ -468,19 +493,18 @@ Both for students and as another model-test, making-the-testing-system is of val
 
 
 ### The Human-Psychology of Machine Learning
-
 Given that public renewed interest in AI is only about three years old as of 2026, it remains to be seen whether difficulties in understanding core concepts about STEM as applied to machine learning will continue to be a problem. History may suggest that this is likely to be (that it already has very long been, see links below) a persistent challenge.
 
 Many times I have seen not only sales-people (who arguably do not know better) but also highest level engineers (who really ought to know better) describing pre-trained models as dynamically learning products. If this is a problem in adult upper management and engineering, how are children being taught (or not taught, or incorrectly taught) these concepts about tools they need to learn how to use? 
 
-In this context it may be useful to have educational activities that teach people in a focused an hands-on way (ideally in a team-context) some of the practical details of STEM. 
+In this context it may be useful to have educational activities that teach people in a focused and hands-on way (ideally in a team-context) some of the practical details of STEM. 
 
 Game-based learning is likely also a fruitful avenue to at least duly plumb.
 
-(A topic survey by me (under construction))
+#### (A topic survey by me (under construction))
 - https://github.com/lineality/ai_2024_in_review 
 
-(A real book by not-me)
+#### (A real book by not-me)
 - https://academic.oup.com/book/36637 
 - https://www.amazon.com/AI-Narratives-Imaginative-Thinking-Intelligent/dp/0198846665 
 
@@ -777,9 +801,6 @@ I'll **move to [1,7]** to stand adjacent to the void NPC (ID 2) and **absorb it*
 ---
 **Stickers Earned:** ✨ *[Imaginary sticker of a fox pawprint]* ✨
 *(For strategic patience and elemental lore-keeping.)*
-
-
-
 
 
 
