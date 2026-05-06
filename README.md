@@ -51,7 +51,7 @@ We should all do projects. Doing projects is a core part of learning, for exampl
 - https://github.com/stemnetbenchmarks/social_story_and_cookbook_puzzles 
 
 ### Live Notebooks in Colab:
-- https://drive.google.com/drive/folders/1ETOeXGSF52_lkclJ7W_xSJNEZC0OEMz_ 
+- [https://drive.google.com/drive/folders/1ETOeXGSF52_lkclJ7W_xSJNEZC0OEMz_]
 
 
 #### Dungeon Crawling (in summary)
