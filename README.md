@@ -4,6 +4,8 @@
 ### AI RPG-Arena:
 # Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
 
+![cover image](AI_RPG_Arena_cover.png)
+
 ### A Testing, Training, Evaluation framework-set, including a Tabletop-like Mini-RPG for people or for AI-Bots
 
 2024.05-06.22, 2026.04-05.08 G.G.Ashbrook
