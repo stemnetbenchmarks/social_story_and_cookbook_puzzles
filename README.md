@@ -1304,3 +1304,4 @@ I'll **move to [1,7]** to stand adjacent to the void NPC (ID 2) and **absorb it*
 *(For strategic patience and elemental lore-keeping.)*
 
 
+
