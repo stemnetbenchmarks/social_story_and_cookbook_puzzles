@@ -6,10 +6,7 @@
 
 ### A Testing, Training, Evaluation framework-set, including a Tabletop-like Mini-RPG for people or for AI-Bots
 
-2024.05-06.22, 2026.04-05.05 G.G.Ashbrook
-
-specific classroom activities: 
-specific workplace activities: 
+2024.05-06.22, 2026.04-05.08 G.G.Ashbrook
 
 
 
@@ -28,12 +25,11 @@ Appendix 3: Future Research
 Appendix 4: The Game Rules & Sample Starting Instructions
 Appendix 5: Sample Planning-Memos Shared by AI-Bots
 
-
 # Introduction
 
 Of the two kinds of puzzle-tests discussed here (and for which code that you can run is provided) the more interactive of the two is the Mini-RPG Dungeon-Crawl. 
 
-The hope is that an intersection of familiar story-game, hands-on tools and code, being able to easily design and run your own tests, and example questions along the edge of what is known, will help you to confidently and inquisitively explore your own Data-Science questions and projects. 
+The hope is that an intersection of academic testing and training, workplace and administrative skill building, and cultural-recreational arts (a familiar story-game, hands-on tools and code, being able to easily design and run your own tests, and example questions along the edge of what is known) will help all ages of people to confidently and inquisitively explore their own Data-Science questions and projects.
 
 I will try to start with a digestible entrypoint: simple, well-defined cases, questions, and terminology that should be accessible to everyone. The topic will get larger and less easy to follow, but we should be able to start with (and return to at any time) a universally clear 'base camp' that everyone can understand and agree on.
 
@@ -709,7 +705,6 @@ There is no single way to do rules for a dungeon level, but there are some obvio
 3. You need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room. 
 
 
-
 #### Story & System-Mechanic
 The story part of the game is both speculative-here and subjective, different people gravitate towards (and prefer) different types of games. That granted, I think it would be interesting to experiment with a system-mechanic that is:
 1. Not level-based or progression based
@@ -788,13 +783,12 @@ Maybe related to the no-free lunch theorem itself, it is very difficult to desig
 
 
 ### What is a "Game"/"Puzzle"?
-If only to illustrate that people do not always agree about this, John von Neumann (one of the founders of game-theory) famously asserted that Chess was not a game, but rather a calculation with a solution because it lacked a random element (whereas most people do consider chess to be a game). (See: https://www.amazon.com/Man-Future-Visionary-Life-Neumann/dp/1324003995)
-
+If only to illustrate that people do not always agree about this: John von Neumann (one of the founders of game-theory) famously asserted that Chess was not a game, but rather a calculation with a solution because it lacked a random element (whereas most people do consider chess to be a game). (See: https://www.amazon.com/Man-Future-Visionary-Life-Neumann/dp/1324003995)
 
 
 ### Equivalence of Puzzle-Types
-
 #### Which puzzle? 
+
 A. The 'pointless' logistics-puzzle is a pile/stack of introverted-steps: the 'puzzle' is a cookbook to follow (no choices or decisions or needed communications) This type of 'puzzle' is following an existing cookbook.
 
 B. The dungeon-crawl-room-puzzle as a list of actions, may be "equivalent" to the logistics-type-puzzle a "pile/stack of steps": If you abstract away where the plan came from, that final 'game-plan' is a dungeon-cookbook to follow (no choices or decisions or needed communications). (e.g. When one person (or AI) makes a whole game-plan, the game operates this way; this type of puzzle is making the cookbook, but where it is done in an introverted way that involves no coordination, communication, or alignment.)
