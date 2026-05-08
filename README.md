@@ -1,6 +1,8 @@
 ##### social_story_and_cookbook_puzzles
 (Audio Version of Paper: [https://drive.google.com/drive/folders/18RBScyhwyKWGpGBfk5oFXFusYGzPoxQE]) 
 
+https://medium.com/@GeoffreyGordonAshbrook/ai-rpg-arena-8a715953e962 
+
 ### AI RPG-Arena:
 # Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
 
@@ -19,11 +21,11 @@
 4. Project Areas
 5. Links & References
 
-Appendix 1: Suggested Curriculum Projects
-Appendix 2: Discussion
-Appendix 3: Future Research
-Appendix 4: The Game Rules & Sample Starting Instructions
-Appendix 5: Sample Planning-Memos Shared by AI-Bots
+- Appendix 1: Suggested Curriculum Projects
+- Appendix 2: Discussion
+- Appendix 3: Future Research
+- Appendix 4: The Game Rules & Sample Starting Instructions
+- Appendix 5: Sample Planning-Memos Shared by AI-Bots
 
 # Introduction
 
