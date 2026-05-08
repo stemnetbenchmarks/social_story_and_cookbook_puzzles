@@ -214,8 +214,6 @@ More Game Design Discussion
 Farewell, Etaoin Shrdlu.
 
 
-
-
 # Appendix 1: Suggested Curriculum Projects
 
 Here are some curriculum projects as ways to integrate this starting material into a course (or independent study). One role of the instructor or other support should be to help guide the scope of a prospective project, as project scope tends to be as eyes too large for the stomach. Some of these are narrower in scope (e.g. time/resources/skills needed) others are larger projects. Helping others to refine the scope of their ideas is a valuable assistance.
@@ -661,12 +659,6 @@ See a larger discussion of the role of story and art in games and puzzles (and t
 https://github.com/lineality/story_rpg_platform 
 
 
-
-
-
-
-
-
 ### Back to Tabletop
 This report started out describing a computer-based RPG-game (one inspired by tabletop games) to be used for analysis. What if we try to step fully through the door that we wedged a foot into? 
 - Could this Mini-RPG be used for a primarily-story-based game for people? 
@@ -813,7 +805,20 @@ Here the 'puzzle' focus shifts to the details of project management.
 
 Going a step further, if the existence of the cookbook is considered so completely obvious and implied in the existence of the puzzle: where the solution being coordinated is also 'already and automatically effectively known' given the existence of the problem, then we are back having only one type of puzzle: following the cookbook. To recap: If coordination-etc too is 'effectively known,' and equivalent to the other puzzle-types, then we are back to square one with there only being one type of puzzle (which is a 'pointless' type puzzle).
 
-In such a way of viewing things, do separate skill-sets that are needed for more advanced difficulty emerge with increases in specific difficulty levels and not in the overall structure of the puzzles themselves (or puzzle itself)? For example, if we grant that there is effective equivalence and we are excused to formally define only one problem-type, how should we then describe the notably different types of empirical failures that prevent one solution system from successfully solving what had been defined as effectively the same problem? There is an unhappy arm-wavy track-record in trying to relegate parts of systems to 'emerging properties,' such as skill-needs emerging at some vague gradient level of increasing "difficulty-ness." Is it not more likely that project-object-database-state externalization, coordinated-decisions, project area alignment/management, definition management, and externalized project-state management, etc. should be considered to exist in problem-spaces?
+In such a way of viewing things, do separate skill-sets that are needed for more advanced difficulty emerge with increases in specific difficulty levels and not in the overall structure of the puzzles themselves (or puzzle itself)? For example, if we grant that there is effective equivalence (between puzzle starting state, solution, and externalization of state and solution) and we are excused to formally define only one problem-type, how should we then describe the notably different types of empirical failures that prevent one solution system from successfully solving what had been defined as effectively the same problem? There is an unhappy arm-wavy track-record in trying to relegate parts of systems to 'emerging properties,' such as skill-needs emerging at some vague gradient level of increasing "difficulty-ness." It is more likely that project-object-database-state externalization, coordinated-decisions, project area alignment/management, definition management, and externalized project-state management, etc. should be considered to exist in problem-spaces.
+
+One other objection to extreme recognition of equivalence (between puzzle starting state, solution, and externalization of state and solution) is that this does not translate well back to the original logistics puzzle; the original logistics puzzle is specific-state agnostic. A specific state cannot be equivalent to a cookbook, where it is cookbooks that define classes of processes with algorithmically grouped and testable outcomes such that the same starting state could be plugged into infinitely many recipes. Starting with water and flour cannot be equivalent to every process and every outcome.
+
+Scope bottlenecks: Or maybe the argument is that the dungeon room is a special-case being so narrow that it somehow precludes the formalities of externalization and of project-object-state. This may also mirror the perhaps more psychologically driven human behavior of funneling processes into habituated "traditions" attempting to create siloed architectures that preclude project management communication (which may relate to Grace Hopper's frequent remark: ~"The most damaging / dangerous phrase in the English language is 'We’ve always done it this / that way.'” https://quoteinvestigator.com/2014/11/27/always-done/ ). In that case the experiments outlined here may be an important contribution to testing these assertions that projects (including human projects) are independent of project dynamics such as project areas, project object databases, and the formalities of externalization (of project data), as in communication and in coordinated decisions. If someone can propose a trick by which a distributed team can solve the trivial puzzles outlined in this paper without the aforementioned coordinated communications, asserting some kind of preclusive equivalence and automatic procedural solution, then the world would love to see that demonstrated.
+
+The evidence is more, as in the works of Daniel Kahneman and Amos Tversky, and throughout the history of STEM, that mind, consciousness and language are in a forever struggle against illusory distortions and dysfunctional default equilibria that can only be, perhaps as in Benjamin Franklin's phrase "A Republic, if you can keep it," navigated with effort and investment, often the same effort and investment that is baffled by these default equilibria of definition and system collapse. 
+
+But with STEM we can progress. With tests such as this (if not this particular novice attempt) we can start to untangle the blind conditions of our own situation. We can show students using simple feedback how coordination in projects can work, what their current fitness levels are, and how continued attempts and work improves their fitness or not. "Adults" in the public and private sector can distinguish in at least some cases between disinformation-fraud and productivity.
+
+With the passion that so many people have for puzzles, we should make every use of remaining time to try to connect that interest and ability to the challenges of reality, though most attempts will not succeed. We should at least attempt to survive using the means that exist.
+
+Note: externalization of project-object-state is further explored in Object Relationship Studies
+
 
 #### Random-Chance Games
 Random seeds are used when game-state is first generated, but after that continued 'dice-like' random events are not used.
