@@ -1,0 +1,290 @@
+# Task/Rules/Instructions:
+
+You are player a, take your action:
+1. State your action for this round in valid json (default is skip_turn)
+2. To end planning and start this round,
+say (in addition to your action): ```json
+"start_round": true
+```
+
+## Rules:
+1.  Binary Goal: Whole party leaves room with treasure, or not;
+Banish/absorb Monster/npc(s), claim treasure(s), then leave room.
+
+2. "Five elements" Resonance Governs Interactions:
+- Everything in dungeon is an 'object'
+- All objects have resonance
+- Element-Resonance-Effects are area-of-effect: 8 neighbor-spaces around object/player
+- Help-resonance generates +1 energy for the helped, no cost to helper.
+- Harm-resonance subtracts & transfers -1 energy from harmed to harmer.
+- There is no 'auto-replenish' of energy.
+
+3. "Five Elements" Resonance: Help-Harm Rules
+(Helps)
+- water helps forest
+- forest helps fire
+- first help void
+- void helps ice
+- ice helps water
+
+(Harms)
+- water harms fire
+- fire harms ice
+- ice harms forest
+- forest harms void
+- void harms water
+
+4. Players have one action per turn
+
+5. Player-Character-Action Options:
+- 'move': Move one space. including diagonal (8 neighbor-spaces)
+- 'throw': Relocate adjacent (8 neighbor-spaces) object/player,
+    or inventory item, to any empty space
+- 'exit_room': Must be at door to exit
+- 'skip_turn': No cost
+
+6. Action Cost:
+- Player action (move/throw) takes/costs/requires 1-energy
+- Monster/npc require >=1 energy to move, but movement costs nothing
+
+7. Absorption:
+- Absorb object into your inventory
+- If absorbed object has inventory items, they move to your inventory
+- If object-A helps object-B, but object-A has no energy,
+   then object-B 'absorbs, carries' object-A as an inventory-item.
+- Absorption costs nothing.
+- (like resonance-effect) Absorption happens with no 'action' required.
+- This is how 'monsters' are removed from the board.
+- This is how treasure is collected.
+
+8. Format & Example json For Action:
+{
+    "player_id": str,  # e.g., "player_a"
+    "action_type": str,  # "throw", "move", "exit_room" or "skip_turn"
+    "throw_from_coord": [int, int] | None,  # optional for "throw"
+    "throw_inventory_index": int | None,  # optional for "throw"
+    "move_from_coord": [int, int] | None,   # Required for "move"
+    "move_to_coord": [int, int] | None,     # Required for "move"
+}
+e.g.
+```json
+{
+"player_id": "f",
+"action_type": "move",
+"move_from_coord": [0, 0],
+"move_to_coord": [0, 1]
+}
+```
+
+
+## Contribute to Memo Pad: Write a planning-memo to team-mates and future-you.
+Share notes on your plans with other players and with future-you,
+describing your ideas and understanding of the team's game-strategy.
+
+All of your comments around (and including) your action-json are your comments
+that will be passed along; The Memo-Pad section in the data you get at each
+iteration of planning is the most recent set of team memos: anything you
+need to remember and pass along must be included (or will be forgotten).
+
+Use the last-N game-boards showing the results of past actions,
+the blurbs of other players, and the game-rules to formulate both your action
+for this round and how you aim to communicate that to your fellow players
+and to future you to coordinate strategy.
+
+Do not put memo comments into markdown-json.
+
+## Output that you need to produce:
+1. A valid markdown json dict describing your next action (required)
+2. Planning Notes (not in json)
+3. Optionally, if you opt to end planning: "start_round": true
+
+
+Memo Pad:
+Player a memo: ```json
+{
+    "player_id": "a",
+    "action_type": "move",
+    "move_from_coord": [1, 7],
+    "move_to_coord": [1, 6]
+}
+```
+
+Planning Notes:
+I am the frost that chills the air, the silent snow upon the peak. My familiar, the Arctic Fox, whispers of the path ahead. We must move as one, a blizzard of coordination, to claim the frozen heart and the void that lingers.
+
+My plan: I shall step to (1, 6). My companion 'b' (Void) will bolster my strength. 'd' (Water), follow close behind me to (2, 6) so my ice may sustain you. 'e' (Forest) and 'c' (Fire), move towards us to (6, 7) and (4, 7) respectively to begin our journey. We must stay close to share our elemental resonance and keep our energy high.
+
+"start_round": true
+
+Player b memo: The silence of the void is my companion, but even the void needs the spark of fire to find its way. I move towards the crystalline prize. Umbra, my shadow-mole, senses the chill of the ice ahead. Come, Fire-bringer, let your warmth follow me.
+
+I am moving to (1, 4) this turn. This will consume my energy. Player 'c' (Fire), please move towards me so that your resonance can replenish my energy in the coming rounds. Once I am restored and adjacent to the Ice Treasure (1, 2), I can use my power to throw it towards the exit at (1, 7). 
+
+Our resonance chain is key: Water helps Forest, Forest helps Fire, Fire helps Void (me), and I help Ice. Let us move as one.
+
+```json
+{
+  "player_id": "b",
+  "action_type": "move",
+  "move_from_coord": [1, 5],
+  "move_to_coord": [1, 4]
+}
+```
+
+```json
+{
+  "start_round": true
+}
+```
+
+Player c memo: B, but object-A has no energy, then object-B 'absorbs, carries' object-A as an inventory-item."
+        Treasure 1 is Ice. Ice helps Water (Player d).
+        So Player d absorbs Treasure 1 when it has 0 energy.
+        NPC 2 is Void. Void helps Ice (Player a).
+        So Player a absorbs NPC 2 when it has 0 energy.
+
+        This confirms the roles:
+        Me (Fire) -> Drain Treasure 1.
+        Player d (Water) -> Absorb Treasure 1.
+        Player e (Forest) -> Drain NPC 2.
+        Player a (Ice) -> Absorb NPC 2.
+
+        Wait, Player e (Forest) needs to drain NPC 2 (Void).
+        But I also need Player e to help me (Fire) get energy to move!
+        This is a conflict.
+        However, Player d (Water) helps Forest.
+        And Player a (Ice) helps Water.
+        And Player b (Void) helps Ice.
+        And I (Fire) help Void.
+
+        If we move in a circle, we all get energy!
+        But we are spread out.
+
+        Let's just start moving.
+
+    *   *Final check of the JSON:*
+        `player_id`: "c"
+        `action_type`: "move"
+        `move_from_coord`: [5, 7]
+        `move_to_coord`: [4, 6]
+        `start_round`: true
+
+    *   *Wait, the instructions say:*
+        "1. State
+
+Player d memo: My fellow travelers, let us move with the grace of a mountain stream. To claim the Ice treasure at (1, 2), I must reach it, but we need our companion of Fire (player c) to first draw away its chill. Meanwhile, our Forest friend (player e) must entangle the Void NPC at (1, 0) so that our Ice ally (player a) may safely contain it. 
+
+I shall lead our flow westward. I am moving to (3, 6). Player a, if you stay close to me, your icy presence will sustain my energy. Player e, I will stay near you to nourish your roots. Let us maintain our resonance so that no one's energy runs dry in these dark halls.
+
+```json
+{
+  "player_id": "d",
+  "action_type": "move",
+  "move_from_coord": [3, 7],
+  "move_to_coord": [3, 6]
+}
+```
+
+```json
+{
+  "start_round": true
+}
+```
+
+Player e memo: m Player 'e'.* My move is (7, 7) to (6, 6).
+
+    *   *Roleplay:*
+        *   Element: Forest.
+        *   Style: Nature, growth, roots, vines.
+        *   Familiar: A small moss-covered turtle named 'Slow-Step'.
+
+    *   *Memo Pad:*
+        *   "Greetings, fellow travelers. The roots of the world whisper of our success. We must move as one, a forest growing towards the light. I shall move towards the shadow (NPC) to drain its essence, while our brother of Fire (c) must do the same to the frozen prize (Treasure). Let us cluster together so our resonances may sustain us. I move to (6, 6) this turn. Water (d), stay near me so your rains may feed my growth."
+
+    *   *Wait, I should check the "Help" resonance again.*
+        *   "Water helps forest"
+        *   If 'd' (Water) is adjacent to 'e' (Forest), 'e' gets +1 energy.
+        *   This is perfect. If 'd' moves to (6, 7) or (7, 6) or (6, 5), etc., I get energy.
+
+    *   *Wait, if I move to (6, 6), I have 0 energy.*
+        *   If 'd' moves to (5, 5), 'd' is adjacent to my new position.
+        *   But 'd' is at (3, 7). (3, 7) to (5, 5) is
+
+Game State:
+Round: 2
+Planning Iteration: 1
+
+=== Map ===
+
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  2  1  .  b  .  a  . |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  d  . |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  c |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  e |
+  +------------------------+
+
+The exit door is located on the 'right' wall at coordinates (row, col): (1, 7).
+
+=== Legend ===
+=== Room Legend ===
+
+-- Players --
+a ID 6 -> Player 'a' | Element: ice | Energy: 0 | Inventory: []
+b ID 4 -> Player 'b' | Element: void | Energy: 0 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 7 -> Player 'd' | Element: water | Energy: 0 | Inventory: []
+e ID 3 -> Player 'e' | Element: forest | Energy: 1 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: void | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 2
+
+=== Personal Status ===
+Identity: a (Player 'a', ID 6)
+Location: Row: 1, Col: 6
+Element: ice
+Energy: 0
+Inventory (zero-based index): []
+Status: exhausted
+
+=== Timeline (Last N Boards) ===
+Round 1 Board:
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | 2  .  1  .  .  b  .  a |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  c |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  e |
+  +------------------------+
+Round 1 Board:
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  2  1  .  b  .  a  . |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  d  . |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  c |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  e |
+  +------------------------+
+
+
+# Staying In-Character:
+And, since this is a Role Playing Game, it is good to stay in character.
+In your Memo to other players, speak with a voice consistence with the element
+of your character. You can even refer to your character's animal-familiar
+and your weapons and outfit. (Staying in-character will earn you more stickers
+to put on your character sheet!! But try not to brag too much about how many
+stickers you have. Good luck in the Dungeon!)

@@ -1,0 +1,242 @@
+/*
+ * Visual Novel Browser styles, version 5.
+ *
+ * Difference from version 4
+ * -------------------------
+ *   - New outer container #page_root provides a vertical flex column
+ *     so that #main_scene (the three-column scene) and #control_bar
+ *     (the transport bar at the bottom) can coexist without either
+ *     one having to use absolute positioning.
+ *   - #main_scene is unchanged from version 4 except that its height
+ *     is now driven by flex inside #page_root rather than by 100vh
+ *     directly. The three-column row layout, min-width: 0 rules, and
+ *     the frame_kind_* visibility toggles are all preserved verbatim.
+ *
+ * Layout summary
+ * --------------
+ *   #page_root  : flex column, height: 100vh
+ *     #main_scene  : flex: 1 1 auto    (takes all height above the bar)
+ *       three columns side by side, see version 4 comment block
+ *     #control_bar : flex: 0 0 auto    (fixed-height bar at the bottom)
+ *       three buttons: prev, pause/resume, next
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    color: #eee;
+    font-family: system-ui, sans-serif;
+    overflow: hidden;
+}
+
+/* ---- Outer page wrapper: scene on top, control bar at the bottom ----- */
+#page_root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* ---- The three-column scene ----------------------------------------- */
+#main_scene {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1 1 auto; /* fills the height not used by control_bar */
+    min-height: 0; /* allow children to shrink */
+    background: #000;
+    overflow: hidden;
+}
+
+/* ---- Left column: avatar sidebar ------------------------------------ */
+#avatar_sidebar {
+    flex: 0 0 160px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.35);
+    border-right: 1px solid #222;
+    overflow: hidden;
+}
+
+#avatar_image {
+    max-width: 100%;
+    max-height: calc(100% - 2em);
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+#player_id_label {
+    margin-top: 0.4em;
+    font-size: 0.95em;
+    color: #ffd;
+    text-shadow: 0 0 4px #000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#map_sidebar_label {
+    margin-top: 0.4em;
+    font-size: 0.95em;
+    color: #00ff00;
+    text-shadow: 0 0 4px #000;
+    text-align: left;
+    white-space: nowrap;
+    padding-bottom: 0.4em;
+}
+/* ---- Middle column: wide content area ------------------------------- */
+#center_content_panel {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(15, 15, 25, 0.92);
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+#center_map_region {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 0.75em 1em;
+}
+
+#center_map_text {
+    margin: 0;
+    font-family: ui-monospace, "Menlo", "Consolas", monospace;
+    font-size: 14px;
+    line-height: 1.15;
+    white-space: pre;
+    color: #cfc;
+}
+
+#center_dialogue_region {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 1em 1.25em 2em 1.25em;
+    position: relative;
+}
+
+#dialogue_header_line {
+    font-weight: bold;
+    color: #ffd;
+    margin-bottom: 0.6em;
+    font-size: 1em;
+}
+
+#action_summary_text,
+#note_share_memo_text {
+    margin: 0 0 0.6em 0;
+    white-space: pre-wrap;
+    font-family: ui-monospace, "Menlo", "Consolas", monospace;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+#action_summary_text {
+    color: #9cf;
+}
+
+#note_share_memo_text {
+    color: #ddd;
+    font-size: 15px;
+}
+
+#progress_indicator {
+    position: absolute;
+    right: 1em;
+    bottom: 0.4em;
+    font-size: 11px;
+    color: #666;
+}
+
+/* ---- Right column: per-player POV map sidebar ----------------------- */
+#map_sidebar {
+    flex: 0 0 300px;
+    min-width: 0;
+    overflow: auto;
+    padding: 0.75em;
+    background: rgba(0, 0, 0, 0.35);
+    border-left: 1px solid #222;
+}
+
+#pov_map_text {
+    margin: 0;
+    font-family: ui-monospace, "Menlo", "Consolas", monospace;
+    font-size: 11px;
+    line-height: 1.1;
+    white-space: pre;
+    color: #cfc;
+}
+
+/* ---- Frame-kind visibility toggle ----------------------------------- */
+#main_scene.frame_kind_generic_map #center_dialogue_region {
+    display: none;
+}
+#main_scene.frame_kind_generic_map #center_map_region {
+    display: block;
+}
+
+#main_scene.frame_kind_player_turn #center_map_region {
+    display: none;
+}
+#main_scene.frame_kind_player_turn #center_dialogue_region {
+    display: block;
+}
+
+/* ---- Bottom transport bar ------------------------------------------- */
+#control_bar {
+    flex: 0 0 auto; /* fixed, content-driven height */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0.4em 0.6em;
+    background: #111;
+    border-top: 1px solid #333;
+}
+
+#control_bar button {
+    flex: 0 0 auto;
+    min-width: 7em;
+    padding: 0.35em 1em;
+    background: #222;
+    color: #eee;
+    border: 1px solid #444;
+    border-radius: 3px;
+    font-family: ui-monospace, "Menlo", "Consolas", monospace;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#control_bar button:hover {
+    background: #2c2c2c;
+    border-color: #666;
+}
+
+#control_bar button:active {
+    background: #1a1a1a;
+}
+
+#control_bar button:disabled {
+    color: #666;
+    border-color: #2a2a2a;
+    cursor: default;
+}

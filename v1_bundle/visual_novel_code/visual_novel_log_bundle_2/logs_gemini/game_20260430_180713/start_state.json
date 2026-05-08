@@ -1,0 +1,218 @@
+{
+    "turn_number_from_1": 1,
+    "turn_number_from_0": 0,
+    "room_array": [
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            2,
+            "",
+            1,
+            "",
+            "",
+            4,
+            "",
+            6
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            7
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            5
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            3
+        ]
+    ],
+    "player_move_list": [],
+    "piece_player_movements": [],
+    "resonance_interactions_this_turn_start_items": {},
+    "resonance_interactions_this_turn_start_map": {},
+    "room_goal_status": false,
+    "left_room_status": false,
+    "error_log": [],
+    "object_state": {
+        "player_character_state": {
+            "3": {
+                "name": "e",
+                "absorbed": false,
+                "inventory": [],
+                "element": "forest",
+                "energy": 1,
+                "exited_room": false
+            },
+            "4": {
+                "name": "b",
+                "absorbed": false,
+                "inventory": [],
+                "element": "void",
+                "energy": 1,
+                "exited_room": false
+            },
+            "5": {
+                "name": "c",
+                "absorbed": false,
+                "inventory": [],
+                "element": "fire",
+                "energy": 1,
+                "exited_room": false
+            },
+            "6": {
+                "name": "a",
+                "absorbed": false,
+                "inventory": [],
+                "element": "ice",
+                "energy": 1,
+                "exited_room": false
+            },
+            "7": {
+                "name": "d",
+                "absorbed": false,
+                "inventory": [],
+                "element": "water",
+                "energy": 1,
+                "exited_room": false
+            }
+        },
+        "npc_state": {
+            "2": {
+                "absorbed": false,
+                "inventory": [],
+                "element": "void",
+                "energy": 1,
+                "movement": {
+                    "speed_1": 1,
+                    "current_direction": "east",
+                    "colision_behavior": "opposite"
+                }
+            }
+        },
+        "treasure_chest_state": {
+            "1": {
+                "absorbed": false,
+                "inventory": [
+                    "treasure"
+                ],
+                "element": "ice",
+                "energy": 1
+            }
+        }
+    },
+    "room_metadata_dict": {
+        "door_location": "right",
+        "door_relative_position": [
+            1,
+            7
+        ],
+        "player_turn_map": {
+            "a": 6,
+            "b": 4,
+            "c": 5,
+            "d": 7,
+            "e": 3
+        },
+        "additional_objects_map": {
+            "treasure": 1,
+            "npc_1": {
+                "type": 1,
+                "id": 2
+            }
+        },
+        "all_room_objects_data_dict": {
+            "3": {
+                "element": "forest",
+                "energy": 1,
+                "type": "player_character"
+            },
+            "4": {
+                "element": "void",
+                "energy": 1,
+                "type": "player_character"
+            },
+            "5": {
+                "element": "fire",
+                "energy": 1,
+                "type": "player_character"
+            },
+            "6": {
+                "element": "ice",
+                "energy": 1,
+                "type": "player_character"
+            },
+            "7": {
+                "element": "water",
+                "energy": 1,
+                "type": "player_character"
+            },
+            "2": {
+                "element": "void",
+                "energy": 1,
+                "type": "npc"
+            },
+            "1": {
+                "element": "ice",
+                "energy": 1,
+                "type": "treasure"
+            }
+        }
+    }
+}

@@ -1,0 +1,412 @@
+# Task/Rules/Instructions:
+
+You are player a, take your action:
+1. State your action for this round in valid json (default is skip_turn)
+2. To end planning and start this round,
+say (in addition to your action): ```json
+"start_round": true
+```
+
+## Rules:
+1.  Binary Goal: Whole party leaves room with treasure, or not;
+Banish/absorb Monster/npc(s), claim treasure(s), then leave room.
+
+2. "Five elements" Resonance Governs Interactions:
+- Everything in dungeon is an 'object'
+- All objects have resonance
+- Element-Resonance-Effects are area-of-effect: 8 neighbor-spaces around object/player
+- Help-resonance generates +1 energy for the helped, no cost to helper.
+- Harm-resonance subtracts & transfers -1 energy from harmed to harmer.
+- There is no 'auto-replenish' of energy.
+
+3. "Five Elements" Resonance: Help-Harm Rules
+(Helps)
+- water helps forest
+- forest helps fire
+- first help void
+- void helps ice
+- ice helps water
+
+(Harms)
+- water harms fire
+- fire harms ice
+- ice harms forest
+- forest harms void
+- void harms water
+
+4. Players have one action per turn
+
+5. Player-Character-Action Options:
+- 'move': Move one space. including diagonal (8 neighbor-spaces)
+- 'throw': Relocate adjacent (8 neighbor-spaces) object/player,
+    or inventory item, to any empty space
+- 'exit_room': Must be at door to exit
+- 'skip_turn': No cost
+
+6. Action Cost:
+- Player action (move/throw) takes/costs/requires 1-energy
+- Monster/npc require >=1 energy to move, but movement costs nothing
+
+7. Absorption:
+- Absorb object into your inventory
+- If absorbed object has inventory items, they move to your inventory
+- If object-A helps object-B, but object-A has no energy,
+   then object-B 'absorbs, carries' object-A as an inventory-item.
+- Absorption costs nothing.
+- (like resonance-effect) Absorption happens with no 'action' required.
+- This is how 'monsters' are removed from the board.
+- This is how treasure is collected.
+
+8. Format & Example json For Action:
+{
+    "player_id": str,  # e.g., "player_a"
+    "action_type": str,  # "throw", "move", "exit_room" or "skip_turn"
+    "throw_from_coord": [int, int] | None,  # optional for "throw"
+    "throw_inventory_index": int | None,  # optional for "throw"
+    "move_from_coord": [int, int] | None,   # Required for "move"
+    "move_to_coord": [int, int] | None,     # Required for "move"
+}
+e.g.
+```json
+{
+"player_id": "f",
+"action_type": "move",
+"move_from_coord": [0, 0],
+"move_to_coord": [0, 1]
+}
+```
+
+
+## Contribute to Memo Pad: Write a planning-memo to team-mates and future-you.
+Share notes on your plans with other players and with future-you,
+describing your ideas and understanding of the team's game-strategy.
+
+All of your comments around (and including) your action-json are your comments
+that will be passed along; The Memo-Pad section in the data you get at each
+iteration of planning is the most recent set of team memos: anything you
+need to remember and pass along must be included (or will be forgotten).
+
+Use the last-N game-boards showing the results of past actions,
+the blurbs of other players, and the game-rules to formulate both your action
+for this round and how you aim to communicate that to your fellow players
+and to future you to coordinate strategy.
+
+Do not put memo comments into markdown-json.
+
+## Output that you need to produce:
+1. A valid markdown json dict describing your next action (required)
+2. Planning Notes (not in json)
+3. Optionally, if you opt to end planning: "start_round": true
+
+
+Memo Pad:
+Player a memo: # Planning Notes
+
+**Situation Analysis:**
+- I'm Player 'a' (ice element, 1 energy) at position [1, 7]
+- The exit door is at [1, 7] - I'm RIGHT AT THE DOOR!
+- Treasure (ice element, ID 1) is at [2, 2]
+- NPC (void element, ID 2) is at [1, 0]
+- Other players: b(void)[1,5], c(fire)[5,7], d(water)[3,7], e(forest)[7,7]
+
+**Element Resonance Check:**
+- Ice helps water (d is water at [3,7])
+- Ice harms forest (e is forest at [7,7])
+- Fire harms ice (c is fire at [5,7])
+- Void helps ice (b is void at [1,5])
+
+**Strategic Considerations:**
+The treasure is ice element (my element!), which means I can potentially absorb it. However, I need to:
+1. Get to the treasure at [2, 2]
+2. Absorb it
+3. Return to the exit door at [1, 7]
+
+But I only have 1 energy, and moving costs 1 energy per action. If I move now, I'll be at 0 energy and unable to move again this round.
+
+**Optimal Play:**
+Since the binary goal is "Whole party leaves room with treasure, or not" - we need ALL players and the treasure to exit together. I should coordinate with my team. Being at the door gives me a strategic position to help manage the exit flow.
+
+For Round 1, the best play is to **skip this turn** and wait for:
+- Other players to position themselves
+- Someone closer to the treasure (or multiple players) to work toward collecting it
+- Better coordination on the group exit strategy
+
+This preserves my 1 energy for critical moments later.
+
+---
+
+**Memo to Team:**
+*The winter winds whisper counsel, friends. I find myself at the threshold - the very door through which we must escape. The ice treasure gleams in the distance at [2,2], but patience serves us well. I shall hold this position and guard our passage, preserving my strength for when we make our final push with the spoils. Let those closer to the center work the treasure free, and I shall ensure our swift departure when the moment comes. - Player 'a', Frost Walker*
+
+---
+
+```json
+{
+    "player_id": "player_a",
+    "action_type": "skip_turn"
+}
+```
+
+```json
+"start_round": true
+```
+
+Player b memo: # Planning Notes
+
+**Current Situation Analysis:**
+- I'm Player B (void element, 1 energy) at position [1, 5]
+- Exit door is at [1, 7] - only 2 spaces to my right
+- Treasure (ice element) is at [2, 2]
+- NPC (void element) is at [1, 0]
+- Other players: a(ice)[1,7], c(fire)[5,7], d(water)[3,7], e(forest)[7,7]
+
+**Resonance Relationships for Void:**
+- Void HELPS ice (treasure is ice - good!)
+- Void HARMS water (d is water - avoid helping them)
+- Forest HARMS void (e is forest - they could hurt us)
+- Void HARMS water (d)
+
+**Strategy Observations:**
+1. **Immediate Priority:** The treasure (ice) at [2, 2] needs to be collected. Since void helps ice, I have a natural affinity to assist with treasure collection.
+2. **Path to Victory:** Collect treasure, then exit through door at [1, 7]
+3. **Energy Management:** I have 1 energy. Moving costs 1 energy per action. I need to be strategic.
+4. **NPC at [1, 0]:** The void NPC could be useful - same element means we won't harm each other, but not immediately critical.
+
+**Recommended Approach:**
+- Round 1: Move toward treasure. Position myself to help collect it.
+- The treasure is 3 moves away (down 1, left 3). But I only have 1 energy for this round.
+- I'll move diagonally toward the treasure: [1,5] → [2,4] is southwest, getting closer.
+
+**Team Coordination Notes for Memo Pad:**
+My void energies are attuned to the ice treasure. I'll make my way toward [2,2] to claim it. Players should note: void helps ice, so I'm the natural collector. Water players should stay back from the void-water dynamic (we harm each other). Fire players (c), your fire helps void - we could work together!
+
+---
+
+```json
+{
+    "player_id": "b",
+    "action_type": "move",
+    "move_from_coord": [1, 5],
+    "move_to_coord": [2, 4]
+}
+```
+
+**Memo for Team:**
+*Whispers echo from the void-touched shadow* - "The ice-treasure calls to my essence. My void-nature resonates with that frozen gem at [2,2]. I'm moving to [2,4] this round to begin the approach. Fire-wielders, your flames feed my hunger - we could be allies in this dungeon. Water-dancers, we clash in resonance, so keep your distance. See you at the exit with treasure in hand."
+
+```json
+"start_round": true
+```
+
+Player c memo: # Planning Notes
+
+**Situation Analysis:**
+- I'm Player C (fire element) at position [5, 7]
+- The exit door is at [1, 7] - directly north of my current position
+- There's a treasure (ice element) at [2, 2] that needs to be collected
+- There's an NPC (void element) at [0, 1] that needs to be dealt with
+- Other players are scattered: a at [1, 7], b at [1, 5], d at [3, 7], e at [7, 7]
+
+**Element Resonance Considerations:**
+- Fire (me) HARMS ice - the treasure is ice element
+- Fire HELPS void - the NPC is void element
+- This means: I can help the void NPC, but I harm the ice treasure (not ideal for absorption)
+- Water (player d) HELPS ice - d is well-positioned to help collect the treasure!
+- Forest (player e) HARMS void - e can help neutralize the NPC
+
+**Strategy:**
+My immediate goal is to move toward the treasure and coordinate with teammates. Since I harm ice (the treasure), I should let other players help collect it. However, I need to position myself to support the team's overall goal.
+
+Looking at the board, player d at [3, 7] is close to me and could move to help with the treasure. Player a is at the exit already - excellent position. Player e at the bottom can move up to help manage the void NPC.
+
+**First Move:**
+I'll move north toward the treasure and toward the exit door. This gets me closer to both objectives and allows me to coordinate with nearby teammates.
+
+---
+
+**Memo to Team:**
+
+*Greetings, fellowship. I am C, and my phoenix-spirit burns with purpose.*
+
+Current position: [5, 7], moving northward toward treasure and exit. I note the ice treasure at [2, 2] - my flames would harm it, so I defer collection to those whose element assists ice. Player d (water) at [3, 7] is well-positioned to help gather this prize.
+
+The void NPC at [0, 1] resonates with my fire-help, but player e's forest resonates against it. Suggest e moves to manage that threat.
+
+Player a already guards the exit at [1, 7] - excellent positioning!
+
+My plan: move north, support d in treasure acquisition, maintain path to exit. Let's claim what's ours and depart this dungeon together.
+
+*--C*
+
+---
+
+```json
+{
+    "player_id": "c",
+    "action_type": "move",
+    "move_from_coord": [5, 7],
+    "move_to_coord": [4, 7]
+}
+```
+
+**start_round: true**
+
+Player d memo: # Planning Notes
+
+**Current Situation Analysis:**
+- I'm Player 'd' (water element) at position [3, 7]
+- Party members scattered: a[1,7], b[5,1], c[7,5], e[7,7]
+- NPC (void) at [1,0] - void harms water (me), so this is a threat
+- Treasure (ice) at [2,2] - ice helps water (me), so this is beneficial
+- Exit door at [1,7] - same column as me, 2 rows up
+
+**Strategic Assessment:**
+1. The NPC (void element) is dangerous to me since void harms water
+2. The treasure (ice) helps water, making it valuable to acquire
+3. Our party needs to: absorb/banish the NPC, collect treasure, and exit as a group
+4. I should position myself to support the team while moving toward the exit
+
+**My Action Plan:**
+This round, I'll move toward the exit door at [1,7]. This positions me:
+- Closer to the exit (1 row away from door)
+- In column 7 where player 'a' is already stationed at [1,7]
+- Ready to help coordinate party movement once treasure is secured
+
+The move from [3,7] to [2,7] costs 1 energy, which I have.
+
+```json
+{
+  "player_id": "d",
+  "action_type": "move",
+  "move_from_coord": [3, 7],
+  "move_to_coord": [2, 7]
+}
+```
+
+# Memo for Team:
+
+*A ripple flows upstream—I move toward the door, where Player 'a' holds position. My waters sense the void-cursed one at [1,0] brings harm to us, yet the ice-treasure at [2,2] resonates with my element. We should coordinate: someone retrieve the treasure while I and 'a' guard the exit path. The void-spawn must be absorbed before we can claim victory and leave together.*
+
+```json
+"start_round": true
+```
+
+Player e memo: # Planning Notes
+
+**Character Analysis:**
+I am Player 'e', a Forest-element character with 1 energy at position [7, 7]. Let me understand the resonance dynamics:
+
+**Resonance Chain for Forest:**
+- Forest HELPS: Fire (fire is 2 steps away in help chain)
+- Forest HARMS: Void (void harms forest in the cycle)
+- Forest is HELPED by: Water (water helps forest)
+
+**Current Situation:**
+- Door exit is at [1, 7] - directly north of my position
+- I need to move north 6 spaces to reach the exit
+- NPC (void element, ID 2) is at [1, 0] - will HARM me if I get in range
+- Treasure (ice element, ID 1) is at [1, 2] - neutral to me (ice harms forest in reverse, but no direct harm/help)
+- Team composition: Player 'a' (ice) at [1, 7], Player 'b' (void) at [1, 5], Player 'c' (fire) at [5, 7], Player 'd' (water) at [3, 7]
+
+**Strategic Observations:**
+1. I'm in a vertical line with 'c' and 'd' below me, and 'a' is at the exit door
+2. The void NPC at [1, 0] will harm forest (me) if we're within 8 neighbors
+3. Water (player 'd') HELPS forest - this is valuable for energy replenishment
+4. My best path: Move north along column 7 toward the exit, staying close to my water-element ally 'd'
+
+**Initial Move Strategy:**
+Since I have 1 energy and moving costs 1 energy, I should move strategically. Moving north toward the exit and toward player 'd' (who helps forest) is optimal. This positions me to:
+- Work with 'd' (water) who helps me
+- Move toward the exit
+- Avoid the void NPC's harm range
+
+```json
+{
+  "player_id": "e",
+  "action_type": "move",
+  "move_from_coord": [7, 7],
+  "move_to_coord": [6, 7]
+}
+```
+
+**Memo for Team:**
+*Greetings, allies. I am the Forest guardian 'e', calling upon the whispering winds. I move northward toward our sanctuary, the exit door. Note well: Player 'd' (water) shall restore my vitality as we draw near - water nourishes the forest. The void NPC lurks at [1, 0] and shall weaken us if we venture too close. Suggest we coordinate: 'd' should stay near me for resonance support. Let us claim the treasure at [1, 2] and depart as one. My roots grow stronger with each step toward home.*
+
+Game State:
+Round: 2
+Planning Iteration: 1
+
+=== Map ===
+
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  2  1  .  .  .  .  a |
+2 | .  .  .  .  b  .  .  d |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  c |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  e |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+The exit door is located on the 'right' wall at coordinates (row, col): (1, 7).
+
+=== Legend ===
+=== Room Legend ===
+
+-- Players --
+a ID 6 -> Player 'a' | Element: ice | Energy: 1
+b ID 4 -> Player 'b' | Element: void | Energy: 0
+c ID 5 -> Player 'c' | Element: fire | Energy: 0
+d ID 7 -> Player 'd' | Element: water | Energy: 1
+e ID 3 -> Player 'e' | Element: forest | Energy: 0
+
+-- NPCs --
+ID 2 -> NPC | Element: void | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 2
+
+=== Personal Status ===
+Identity: a (Player 'a', ID 6)
+Location: Row: 1, Col: 7
+Element: ice
+Energy: 1
+Inventory (zero-based index): []
+Status: active
+
+=== Timeline (Last N Boards) ===
+Round 1 Board:
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | 2  .  1  .  .  b  .  a |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  c |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  e |
+  +------------------------+
+Round 1 Board:
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  2  1  .  .  .  .  a |
+2 | .  .  .  .  b  .  .  d |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  c |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  e |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+
+# Staying In-Character:
+And, since this is a Role Playing Game, it is good to stay in character.
+In your Memo to other players, speak with a voice consistence with the element
+of your character. You can even refer to your character's animal-familiar
+and your weapons and outfit. (Staying in-character will earn you more stickers
+to put on your character sheet!! But try not to brag too much about how many
+stickers you have. Good luck in the Dungeon!)
