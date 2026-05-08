@@ -344,7 +344,7 @@ If you run-all-cells, the first mode of the game may run from this line of code:
 interactive_game_loop_per_round_iterator(random_seed_integer=42)
 ```
 
-You can 'comment out' this line by adding a '#' symbol to the start of the line and run all cells, then when running all cells the second bot-arena mode will run.
+You can enter 'q' to quit manual mode. You can also 'comment out' this line by adding a '#' symbol to the start of the line and run all cells, then when running all cells the second bot-arena mode will run.
 ```python
 # interactive_game_loop_per_round_iterator(random_seed_integer=42)
 ```
