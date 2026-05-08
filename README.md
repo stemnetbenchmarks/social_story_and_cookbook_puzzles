@@ -4,14 +4,12 @@
 ### AI RPG-Arena:
 # Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
 
-![cover image](AI_RPG_Arena_cover.png)
-
 ### A Testing, Training, Evaluation framework-set, including a Tabletop-like Mini-RPG for people or for AI-Bots
 
 2024.05-06.22, 2026.04-05.08 G.G.Ashbrook
 
 
-
+![cover image](AI_RPG_Arena_cover.png)
 
 ## Contents:
 
@@ -692,16 +690,46 @@ dungeon_fog_cli contains two parts, a hallway of doors (a dungeon level) generat
 In this example below, # is a stone wall, 'P' is the party of players, 'O' is doorway into a dungeon room (the main game-play focus), a period (.) is a position along the hall (could be blank, but easier to count with a dot), and 'S' is the stairwell down to the next level of the dungeon (and an optional 'X' is whatever the DM/GM wants it to be for the story, if anything). 
 
 
+```
+['####################',
+ '###O###O###O#####O##',
+ '##..........##....##',
+ '#X.##O##.##.###O#.##',
+ '##.#####.#O.#####.##',
+ '##.X#....##.##....O#',
+ '##.##.##O##.O#.##.##',
+ '#O.##.#####.##.#O.##',
+ '##.##.O#.##....##.##',
+ '##.O#.##.########.O#',
+ '##.##.##.#O####O#.##',
+ '#O.##.##..........##',
+ '####O.##.##.#####.##',
+ '#####.#O.##.O####.O#',
+ '##....##....##....##',
+ '#O.##O##.##.##.#####',
+ '##.#####.##.##.##O##',
+ '##SO#P...O#.......##',
+ '######X#######O#####',
+ '####################']
+```
 
 With the 'walk in fog' tool, players see what is nearby, but not the whole map (e.g. they cannot see around corners). The tool lets the DM/GM advance the view to show to the players. 
 
 
 
+```
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~.~~~~~
+~~~~~###.#~~~~
+~~~~#P...O~~~~
+~~~~~#O###~~~~
+~~~~~~#~~~~~~~
+```
 
 
-
-
-There is no single way to do rules for a dungeon level, but there are some obvious simple options. Example options:
+There is no single way to do rules for a dungeon level, but there are some obvious simple options that might work. Example options:
 1. Win every room on the level.
 2. For each level you need that many keys from treasure chests to go down to the next level.
 3. You need one treasure of each element to go down the stairwell, and each level down has that number of monsters per room. 
