@@ -1,4 +1,5 @@
 ##### social_story_and_cookbook_puzzles
+(Audio Version of Paper: [https://drive.google.com/drive/folders/18RBScyhwyKWGpGBfk5oFXFusYGzPoxQE]) 
 
 ### AI RPG-Arena:
 # Social Story Puzzles & 'Pointless' Cookbook/Logistics Puzzles
@@ -6,7 +7,10 @@
 ### A Testing, Training, Evaluation framework-set, including a Tabletop-like Mini-RPG for people or for AI-Bots
 
 2024.05-06.22, 2026.04-05.05 G.G.Ashbrook
-(Audio Version of Paper: [https://drive.google.com/drive/folders/18RBScyhwyKWGpGBfk5oFXFusYGzPoxQE]) 
+
+specific classroom activities: 
+specific workplace activities: 
+
 
 
 
@@ -246,6 +250,13 @@ Here are some curriculum projects as ways to integrate this starting material in
 
 14. As language-concept-space puzzles, how would the introduction of 'immaterial' story-items for characters affect room-puzzle performance of player-characters, e.g. helping or harming overall performance. E.g. Would having a story-item relevant to a character in a chest (even if that had no mechanical function) improve that characters' performance? (Even if a first step of demonstrating some kind of quasi-motivational-story-mechanism effect works, clearly 'explaining' how this works may be infeasible. But various further tests around this could be very interesting.)
 
+#### Suggested Activities for 'students' of any age or level:
+1. Have a team play through a game, most likely starting with an easiest difficulty-level. 
+
+The instructor/researcher may take the role of a human DM/GM/Guide to walk them through the steps and tools and answer questions, and to more closely observe participant behavior (including UI/UX elements). 
+
+Depending on what is available, this could use only pencil and paper, or only black/white board, or it could be a mix of computer, chess-set, pen and paper, blackboard, etc., depending on what is available and on what is most helpful for those users. 
+
 
 # Appendix 2: Details & Discussion
 
@@ -439,6 +450,10 @@ I would also question whether multi-participant-interdependent actions can or sh
 (Note: The software industry and computer science spent ~fifty years in disarray doubling down on an ideology of anti-communication. Practices like Agile (though the kanban-board predates software) will hopefully apply STEM to the need for better managed projects, but as of 2026 the rebellion against project management is still in overwhelming majority.) 
 
 There are other details involved too, but hopefully this serves as a starting summary of some of the main issues and interrelated topics.
+
+
+#### 'Pointless' Logistics-Puzzle Steps:
+To generate a logistics-puzzle run the .py file or the notebook (which contains one code cell to run). This will produce and save-to-file puzzle data, a puzzle-test prompt for the puzzle problem, and a .py unit-test to test a proposed solution to the puzzle. 
 
 
 ### Asynchronous Puzzles & Race-Conditions
@@ -729,6 +744,9 @@ While moot in 2026 because AI cannot complete a single room, ideally AI will imp
 5. You can leave a room before winning, but if you lose a room the game ends.
 6. Dungeon-Level is completed by descending stairs.
 7. A model's level/rank/index is the highest N that the model can complete as a median out of N tries.
+
+#### Element and Player:
+In the current system, players and elements are randomized in each room. For human RPG players this would affect the shape of the narrative story. One option for a multi-level multi-room game is to have the player elements be fixed/static. Or the changing elements could be worked into the story. It might be useful to try both options to see how people react, as either should be feasible. 
 
 
 ### Make the Maker:
