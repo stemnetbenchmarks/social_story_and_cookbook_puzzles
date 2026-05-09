@@ -464,6 +464,12 @@ On the one hand the pseudo-asynchronous kludge of game-rounds and simultaneous t
 While we can create a more asynchronous version of a minimal dungeon, e.g. where bots are continually cycling through their own loops instead of stepping through an imposed and artificial order of actions, what would that change about the overall puzzle? (Maybe we need to try and see...)
 E.g. Even in the real-analog bio-ecological world, best practice is to divide projects into discrete planning and action schedules, with literal round-robin 'standup-alignment' communications, very much like a standard 'artificial' round-of-turns game-time-space.
 
+### Time and Turns
+For more about the mechanics of how time is broken into rounds that are then divided into turns, see the code notebook. This Mini-RPG's way of doing a round-of-turns is probably (?) common across turn-based games. 
+
+If you want to make the 'time per round and turn' less simple, the python code is a great place to experiment and see how that shapes events and game-play.
+
+For more discussion on time in game-dynamics, see https://github.com/lineality/story_rpg_platform the RPG-Story-Platform project where there is more detailed discussion of time, for example for how event and process time and space are abstracted in the game of iGo (when mapping between real-life process and 'gamified' process), which may be something that more game designers should look into more deeply. 
 
 ### Modular for More Puzzle Parts:
 In this modular framework there is a ~most minimal starting version, but there are also many aspects that can be changed to introduce increasing 'dimensions' to the puzzle:
