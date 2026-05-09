@@ -564,8 +564,15 @@ Similarly, we can test if additional story-elements help AI or human task profic
 There may not be, but are there any conceptual parallels between the mistakes that language-models make as players and those that various ages of human players make? The stateless-amnesia and non-learning difference for language-bots may be overwhelming (in making it hard to compare to people), but on the other hand it may present an opportunity to study the presence or absence of a specifically learned, not-automatically-learned, skill. 
 
 
+### Age and Education
+While there are areas within education that are not easy or appropriate to quantify (as there are in 'health'), more broadly education should be treated more as a medical-science and less as low-cost high-risk daycare.
+
+With the United-States as the example, there are a number of unhelpful and entrenched ways of viewing education:
+
+1. A bazaar infantilizing of students by adults where adults make the surreal claim that students are not able to learn various skills, and that various tasks are too advanced or inappropriate for the young (ranging from emptying a trashcan to plotting points on a weather chart). "They are not ready for that" is the forever-response to virtually everything in education through to graduation. There is often a counterproductive incentive for educators to perpetually intellectually starve students and maintain a regime where the teacher is an always-superior cult-leader and the students are seen as a potentially-threatening inferior and ignorant flock that must be shaped more as pets. This is a recipe for societal disaster.
 
 
+2. An assumption of automatic-learning: There is no significant concept of non-automatically-learned skills, along with other deficits in STEM literacy such as treating feedback as if it is an enemy to be scapegoated. This often goes along with the automatic "they are not ready for this now" response, assuming and presuming that either some vague person will teach the item later or that it will spontaneously teach itself eventually. And the prohibition on data from meaningful projects and evaluations creates a vacuum of ambiguity, a rhetorically plausible deniability, and a popularly-comfortable nihilism. 
 
 
 
@@ -643,7 +650,16 @@ Let's take the example of putting two students in front of one computer, each ha
 
 
 ### The Scope of Coordinated Decisions:
-The scope for communication here is minimal, and there is a question about the scope and scale of the problem-space of formalities in coordinated decisions and projects. Is there a significantly better and efficient paradigm for signal handling that is beyond this method and yet does not extend or elaborate as far as project-Uma and the full coordinated decisions studies? If not there may be something about the space and role of coordinated decisions that is routinely underestimated. 
+The scope for communication here is minimal, and there is a question about the scope and scale of the problem-space of formalities in coordinated decisions and projects. 
+
+Is there a significantly better and efficient paradigm for signal handling that is beyond this method and yet does not extend or elaborate as far as project-Uma and the full coordinated decisions studies? If not there may be something about the space and role of coordinated decisions that is routinely underestimated. 
+
+The Uma Collaboration tools project is also a ~minimal project coordination scope, but the scope for software and moving parts is a nontrivial step beyond these Mini-RPG experiments. How much is involved in project-state coordination tasks? It is also not clear (not having been tested) that Uma would be sufficient for planning out dungeon game projects in an environment where all the nuances of 'in the same room' planning must be handled more systematically. 
+
+See:
+https://github.com/lineality/uma_productivity_collaboration_tool/blob/main/t_is_for_task.md 
+
+This line of questions also connects to coordinated robotics tasks.
 
 
 ### Try it! Make a game-board in software: 'Easy things are hard'
