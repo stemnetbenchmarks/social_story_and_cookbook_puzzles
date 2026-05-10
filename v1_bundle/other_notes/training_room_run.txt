@@ -1,0 +1,2051 @@
+Training Room Run Sample
+
+
+
+=== Starting Interactive Puzzle (Seed: 42) ===
+[Setup] Building initial room_story_state_dict with Direct Name Storage...
+[Setup] room_story_state_dict successfully built with integrated player names.
+For Seed 42:
+The exit is on the 'right' wall at coordinates (row, col): (1, 7)
+
+========================================
+=== ROUND 1 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 1 | Inventory: []
+b ID 6 -> Player 'b' | Element: forest | Energy: 1 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 1 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 1 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 1
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 1 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | 2  .  .  .  .  .  a  b |
+2 | .  .  .  .  .  1  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  d |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  e |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ b 6: Element [forest] | Energy: 1 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 1 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 1 | Absorbed: False
+  ID 2 : NPC      | Element [fire  ] | Energy: 1 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 7 7
+To Row, Col (e.g. '4 6'): 6 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+Player e moved. Energy: 1 -> 0
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 1 -> 1 (Delta: 0)
+ID 7: Energy 1 -> 2 (Delta: 1)
+ID 6: Energy 1 -> 2 (Delta: 1)
+ID 1: Energy 1 -> 1 (Delta: 0)
+ID 5: Energy 1 -> 1 (Delta: 0)
+ID 4: Energy 1 -> 1 (Delta: 0)
+ID 3: Energy 0 -> 1 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+
+End of Round 1 Status: still playing
+
+========================================
+=== ROUND 2 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: []
+b ID 6 -> Player 'b' | Element: forest | Energy: 2 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 1 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 1 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 1
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 2 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  2  .  .  .  .  a  b |
+2 | .  .  .  .  .  1  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  d |
+6 | .  .  .  .  .  .  .  e |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: False | Inv: []
+ b 6: Element [forest] | Energy: 2 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 1 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 1 | Absorbed: False
+  ID 2 : NPC      | Element [fire  ] | Energy: 1 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 1 -> 1 (Delta: 0)
+ID 7: Energy 2 -> 3 (Delta: 1)
+ID 6: Energy 2 -> 3 (Delta: 1)
+ID 1: Energy 1 -> 1 (Delta: 0)
+ID 5: Energy 1 -> 1 (Delta: 0)
+ID 4: Energy 1 -> 1 (Delta: 0)
+ID 3: Energy 1 -> 2 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+
+End of Round 2 Status: still playing
+
+========================================
+=== ROUND 3 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 3 | Inventory: []
+b ID 6 -> Player 'b' | Element: forest | Energy: 3 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 1 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 2 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 1
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 3 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  2  .  .  .  a  b |
+2 | .  .  .  .  .  1  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  d |
+6 | .  .  .  .  .  .  .  e |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 3 | Status: active | Exited: False | Inv: []
+ b 6: Element [forest] | Energy: 3 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 2 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 1 | Absorbed: False
+  ID 2 : NPC      | Element [fire  ] | Energy: 1 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 5 7
+To Row, Col (e.g. '4 6'): 4 7
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 6 7
+To Row, Col (e.g. '4 6'): 5 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d moved. Energy: 1 -> 0
+Player e moved. Energy: 2 -> 1
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 1 -> 1 (Delta: 0)
+ID 7: Energy 3 -> 4 (Delta: 1)
+ID 6: Energy 3 -> 4 (Delta: 1)
+ID 1: Energy 1 -> 1 (Delta: 0)
+ID 5: Energy 1 -> 1 (Delta: 0)
+ID 4: Energy 0 -> 1 (Delta: 1)
+ID 3: Energy 1 -> 2 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+
+End of Round 3 Status: still playing
+
+========================================
+=== ROUND 4 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: []
+b ID 6 -> Player 'b' | Element: forest | Energy: 4 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 1 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 2 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 1
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 4 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  2  .  .  a  b |
+2 | .  .  .  .  .  1  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  d |
+5 | .  .  .  .  .  .  .  e |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: []
+ b 6: Element [forest] | Energy: 4 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 2 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 1 | Absorbed: False
+  ID 2 : NPC      | Element [fire  ] | Energy: 1 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 1 -> 1 (Delta: 0)
+ID 7: Energy 4 -> 5 (Delta: 1)
+ID 6: Energy 4 -> 5 (Delta: 1)
+ID 1: Energy 1 -> 0 (Delta: -1)
+ID 5: Energy 1 -> 1 (Delta: 0)
+ID 4: Energy 1 -> 2 (Delta: 1)
+ID 3: Energy 2 -> 3 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+[Absorption] 1 (ice) absorbed by 7 (water).
+[Absorption] Flattening inventory: adding ['treasure'] to absorber.
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 4 Status: still playing
+
+========================================
+=== ROUND 5 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 5 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 5 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 2 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 3 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 1
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 5 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  2  .  a  b |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  d |
+5 | .  .  .  .  .  .  .  e |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 5 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 5 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 2 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 3 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 1 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 1
+Invalid input, skipping turn.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 1 -> 0 (Delta: -1)
+ID 7: Energy 5 -> 5 (Delta: 0)
+ID 6: Energy 5 -> 6 (Delta: 1)
+ID 5: Energy 1 -> 1 (Delta: 0)
+ID 4: Energy 2 -> 3 (Delta: 1)
+ID 3: Energy 3 -> 4 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 5 Status: still playing
+
+========================================
+=== ROUND 6 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 5 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 6 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 3 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 4 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 6 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  2  a  b |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  c |
+4 | .  .  .  .  .  .  .  d |
+5 | .  .  .  .  .  .  .  e |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 5 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 6 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 3 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 4 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 3 7
+To Row, Col (e.g. '4 6'): 2 7
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]41
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+Player c moved. Energy: 1 -> 0
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 2: Energy 0 -> 0 (Delta: -1)
+ID 7: Energy 5 -> 5 (Delta: 0)
+ID 6: Energy 6 -> 7 (Delta: 1)
+ID 5: Energy 0 -> 0 (Delta: 0)
+ID 4: Energy 3 -> 3 (Delta: 0)
+ID 3: Energy 4 -> 5 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 6 Status: still playing
+
+========================================
+=== ROUND 7 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 5 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 7 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 0 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 3 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 5 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 7 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  2  a  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  d |
+5 | .  .  .  .  .  .  .  e |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 5 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 7 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 0 | Status: exhausted | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 3 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 5 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 1 6
+To Row, Col (e.g. '4 6'): 0 7
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 4 7
+To Row, Col (e.g. '4 6'): 3 7
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 5 7
+To Row, Col (e.g. '4 6'): 4 7
+
+[Executing Player Actions...]
+Player a moved. Energy: 5 -> 4
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+Player d moved. Energy: 3 -> 2
+Player e moved. Energy: 5 -> 4
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 7 -> 8 (Delta: 1)
+ID 5: Energy 0 -> 1 (Delta: 1)
+ID 4: Energy 2 -> 3 (Delta: 1)
+ID 3: Energy 4 -> 5 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 7 Status: still playing
+
+========================================
+=== ROUND 8 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 8 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 1 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 3 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 5 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 8 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  2  .  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 8 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 1 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 3 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 5 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 8 -> 9 (Delta: 1)
+ID 5: Energy 1 -> 2 (Delta: 1)
+ID 4: Energy 3 -> 4 (Delta: 1)
+ID 3: Energy 5 -> 6 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 8 Status: still playing
+
+========================================
+=== ROUND 9 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 9 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 2 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 4 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 6 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 9 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  2  .  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 9 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 2 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 4 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 6 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 9 -> 10 (Delta: 1)
+ID 5: Energy 2 -> 3 (Delta: 1)
+ID 4: Energy 4 -> 5 (Delta: 1)
+ID 3: Energy 6 -> 7 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 9 Status: still playing
+
+========================================
+=== ROUND 10 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 10 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 3 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 5 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 7 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 10 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  2  .  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 10 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 3 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 5 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 7 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 10 -> 11 (Delta: 1)
+ID 5: Energy 3 -> 4 (Delta: 1)
+ID 4: Energy 5 -> 6 (Delta: 1)
+ID 3: Energy 7 -> 8 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 10 Status: still playing
+
+========================================
+=== ROUND 11 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 11 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 4 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 8 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 11 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  2  .  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  .  d |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 11 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 4 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 8 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 3 7
+To Row, Col (e.g. '4 6'): 3 6
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d moved. Energy: 6 -> 5
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 11 -> 12 (Delta: 1)
+ID 5: Energy 4 -> 5 (Delta: 1)
+ID 4: Energy 5 -> 6 (Delta: 1)
+ID 3: Energy 8 -> 9 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 11 Status: still playing
+
+========================================
+=== ROUND 12 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 5 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: []
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 12 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  2  .  b |
+2 | .  .  .  .  .  .  .  c |
+3 | .  .  .  .  .  .  d  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 5 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: []
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: False
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]
+Skipping turn for b.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 3 6
+To Row, Col (e.g. '4 6'): 2 5
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d moved. Energy: 6 -> 5
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 2: Energy 0 -> 0 (Delta: 0)
+ID 6: Energy 12 -> 13 (Delta: 1)
+ID 4: Energy 5 -> 6 (Delta: 1)
+ID 5: Energy 5 -> 6 (Delta: 1)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+[Absorption] 2 (fire) absorbed by 4 (void).
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 12 Status: still playing
+
+========================================
+=== ROUND 13 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 13 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 6 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 13 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  .  .  b |
+2 | .  .  .  .  .  d  .  c |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 13 | Status: active | Exited: False | Inv: []
+ c 5: Element [fire  ] | Energy: 6 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]
+Skipping turn for a.
+
+--- Player 'b's Turn ---
+Available Actions for b: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'b' (0-3): [or 'q' to quit]3
+Player Row, Col: 1 7
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+Player b exited room. Energy: 13 -> 12
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 4 -> 4 (Delta: 0)
+ID 4: Energy 6 -> 6 (Delta: 0)
+ID 5: Energy 6 -> 6 (Delta: 0)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 13 Status: still playing
+
+========================================
+=== ROUND 14 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 4 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 6 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 14 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  a |
+1 | .  .  .  .  .  .  .  . |
+2 | .  .  .  .  .  d  .  c |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 4 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 6 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 0 7
+To Row, Col (e.g. '4 6'): 1 7
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+Player a moved. Energy: 4 -> 3
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 7: Energy 3 -> 3 (Delta: 0)
+ID 4: Energy 6 -> 6 (Delta: 0)
+ID 5: Energy 6 -> 5 (Delta: -1)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 14 Status: still playing
+
+========================================
+=== ROUND 15 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 3 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 5 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 15 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  a |
+2 | .  .  .  .  .  d  .  c |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 3 | Status: active | Exited: False | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 5 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+--- Player 'a's Turn ---
+Available Actions for a: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'a' (0-3): [or 'q' to quit]3
+Player Row, Col: 1 7
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]
+Skipping turn for c.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+Player a exited room. Energy: 3 -> 2
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 4: Energy 6 -> 6 (Delta: 0)
+ID 5: Energy 5 -> 5 (Delta: 0)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 15 Status: still playing
+
+========================================
+=== ROUND 16 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 5 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 16 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  . |
+2 | .  .  .  .  .  d  .  c |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 5 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 2 7
+To Row, Col (e.g. '4 6'): 1 7
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+Player c moved. Energy: 5 -> 4
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 5: Energy 4 -> 4 (Delta: 0)
+ID 4: Energy 6 -> 6 (Delta: 0)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 16 Status: still playing
+
+========================================
+=== ROUND 17 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 4 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 17 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  c |
+2 | .  .  .  .  .  d  .  . |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 4 | Status: active | Exited: False | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'c's Turn ---
+Available Actions for c: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'c' (0-3): [or 'q' to quit]3
+Player Row, Col: 1 7
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]
+Skipping turn for d.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]
+Skipping turn for e.
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+Player c exited room. Energy: 4 -> 3
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+[Validation] Player e is skipping their turn.
+Player e skipped turn (Resting).
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 4: Energy 6 -> 6 (Delta: 0)
+ID 3: Energy 9 -> 9 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 17 Status: still playing
+
+========================================
+=== ROUND 18 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 3 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 6 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 9 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 18 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  . |
+2 | .  .  .  .  .  d  .  . |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  e |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 3 | Status: active | Exited: True | Inv: []
+ d 4: Element [void  ] | Energy: 6 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 9 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+Player c is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 2 5
+To Row, Col (e.g. '4 6'): 1 6
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 4 7
+To Row, Col (e.g. '4 6'): 3 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d moved. Energy: 6 -> 5
+Player e moved. Energy: 9 -> 8
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 4: Energy 5 -> 5 (Delta: 0)
+ID 3: Energy 8 -> 8 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 18 Status: still playing
+
+========================================
+=== ROUND 19 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 3 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 5 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 8 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 19 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  d  . |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  e |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 3 | Status: active | Exited: True | Inv: []
+ d 4: Element [void  ] | Energy: 5 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 8 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+Player c is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 1 6
+To Row, Col (e.g. '4 6'): 1 7
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 3 7
+To Row, Col (e.g. '4 6'): 2 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d moved. Energy: 5 -> 4
+Player e moved. Energy: 8 -> 7
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 4: Energy 4 -> 4 (Delta: 0)
+ID 3: Energy 7 -> 8 (Delta: 1)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 19 Status: still playing
+
+========================================
+=== ROUND 20 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 3 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 4 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 8 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 20 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  d |
+2 | .  .  .  .  .  .  .  e |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 3 | Status: active | Exited: True | Inv: []
+ d 4: Element [void  ] | Energy: 4 | Status: active | Exited: False | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 8 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+Player c is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'd's Turn ---
+Available Actions for d: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'd' (0-3): [or 'q' to quit]3
+Player Row, Col: 1 7
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]1
+From Row, Col (e.g. '4 5'): 2 7
+To Row, Col (e.g. '4 6'): 1 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+Player d exited room. Energy: 4 -> 3
+Player e moved. Energy: 8 -> 7
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+ID 3: Energy 7 -> 7 (Delta: 0)
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 20 Status: still playing
+
+========================================
+=== ROUND 21 ===
+========================================
+=== Room Legend ===
+
+-- Players --
+a ID 7 -> Player 'a' | Element: water | Energy: 2 | Inventory: ['1', 'treasure']
+b ID 6 -> Player 'b' | Element: forest | Energy: 12 | Inventory: []
+c ID 5 -> Player 'c' | Element: fire | Energy: 3 | Inventory: []
+d ID 4 -> Player 'd' | Element: void | Energy: 3 | Inventory: ['2']
+e ID 3 -> Player 'e' | Element: ice | Energy: 7 | Inventory: []
+
+-- NPCs --
+ID 2 -> NPC | Element: fire | Energy: 0
+
+-- Treasures --
+ID 1 -> Treasure | Element: ice | Energy: 0
+
+=== Game Timeline Visualization ===
+
+    --- End of Round 21 ---
+    0  1  2  3  4  5  6  7
+  +------------------------+
+0 | .  .  .  .  .  .  .  . |
+1 | .  .  .  .  .  .  .  e |
+2 | .  .  .  .  .  .  .  . |
+3 | .  .  .  .  .  .  .  . |
+4 | .  .  .  .  .  .  .  . |
+5 | .  .  .  .  .  .  .  . |
+6 | .  .  .  .  .  .  .  . |
+7 | .  .  .  .  .  .  .  . |
+  +------------------------+
+
+[ Player Status ]
+ a 7: Element [water ] | Energy: 2 | Status: active | Exited: True | Inv: ['1', 'treasure']
+ b 6: Element [forest] | Energy: 12 | Status: active | Exited: True | Inv: []
+ c 5: Element [fire  ] | Energy: 3 | Status: active | Exited: True | Inv: []
+ d 4: Element [void  ] | Energy: 3 | Status: active | Exited: True | Inv: ['2']
+ e 3: Element [ice   ] | Energy: 7 | Status: active | Exited: False | Inv: []
+
+[ Non-Player Objects on Board ]
+  ID 1 : Treasure | Element [ice   ] | Energy: 0 | Absorbed: True
+  ID 2 : NPC      | Element [fire  ] | Energy: 0 | Absorbed: True
+
+
+
+Player a is not active (Exited/Absorbed). Auto-skipping.
+
+Player b is not active (Exited/Absorbed). Auto-skipping.
+
+Player c is not active (Exited/Absorbed). Auto-skipping.
+
+Player d is not active (Exited/Absorbed). Auto-skipping.
+
+--- Player 'e's Turn ---
+Available Actions for e: [1] move_self, [2] throw, [3] exit_room, [0] skip/rest
+Select action for Player 'e' (0-3): [or 'q' to quit]3
+Player Row, Col: 1 7
+
+[Executing Player Actions...]
+[Validation] Player a is skipping their turn.
+Player a skipped turn (Resting).
+[Validation] Player b is skipping their turn.
+Player b skipped turn (Resting).
+[Validation] Player c is skipping their turn.
+Player c skipped turn (Resting).
+[Validation] Player d is skipping their turn.
+Player d skipped turn (Resting).
+Player e exited room. Energy: 7 -> 6
+[Executing NPC Actions...]
+
+--- Executing unified NPC_actions ---
+[Calculating Resonance...]
+[Executing absorptions...]
+
+--- Executing process_elemental_absorption (Updated Tie-breaking & Flattening) ---
+
+--- Executing soft_cleanup_entities (Exhaustion Mode) ---
+[Action] Entity 2 was absorbed. Removing from board.
+[Action] Entity 1 was absorbed. Removing from board.
+
+End of Round 21 Status: solved puzzle
+
+=== Game Over! Final Status: solved puzzle ===
+
