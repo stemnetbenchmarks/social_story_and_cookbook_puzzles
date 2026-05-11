@@ -314,7 +314,7 @@ Towards the bottom of the notebook you will see the cells for each of the three 
 
 (Note: A 'notebook' is a way to run python-code that is user-friendly and easy to share, where you can make and run sections of code in 'cells,' and you can also write text-cells. 'Colab' is Google's version of the python-notebook, which is amazingly easy to share and use in a browser on ~any online device. You can also easily download a colab-notebook as a .py or a notebook .ipynb file that can be run on your local computer without needing a network connection.) 
 
-Note: To use a more basic starter-map, you and input 'use_training_room=True' e.g.
+Note: To use a more basic starter-map, you can use 'use_training_room=True' e.g.
 
 ```python
 interactive_game_loop_per_round_iterator(
