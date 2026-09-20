@@ -218,6 +218,42 @@ Farewell, Etaoin Shrdlu.
 
 # Appendix 1: Suggested Curriculum Projects
 
+### Curriculum vs. Syllabus
+
+We can define an underlying curriculum (the content-map, the skills-tree(s), and basic materials and activities) that is broadly applicable (serving as a stable general curriculum), but individual implementations of this (as scheduled and evaluated syllabi) are likely to be diverse and tailored case-by-case. Specific class/student situations will have a significant influence on the details of each part of each specific lesson-project.
+
+#### Sources of Specific Variation:
+- Level(s) being targeted
+- Class size
+- Team-size
+- Each-class duration
+- Whole course duration
+- Class frequency
+- Tech resources
+- Assessment requirements
+- Other student/class/parent/teacher/school Needs & Goals (see disambiguation matrix https://github.com/lineality/needs_goals_assessment_disambiguation ) 
+
+#### Three General Curriculum Areas:
+1. Team Activity:
+- Adding cutups, etc
+- Looking at narrative
+- Looking at task-types and what makes situations different
+- Looking at team/project management
+- Looking at communication
+
+2. Studying Machine Activity:
+- Testing different levels of difficulty
+- Describing issues
+- Improving machine activity
+- Looking at project-state (project-object-state)
+
+3. Modifying Code:
+- Looking at model types and details (gguf)
+- Looking at language/techstack choice
+- adding features
+- Adding puzzle-world extensions
+- Adding GUI
+
 Here are some curriculum projects as ways to integrate this starting material into a course (or independent study). One role of the instructor or other support should be to help guide the scope of a prospective project, as project scope tends to be as eyes too large for the stomach. Some of these are narrower in scope (e.g. time/resources/skills needed) others are larger projects. Helping others to refine the scope of their ideas is a valuable assistance.
 
 1. Predict and test the overall (room-completion) success at different ~sizes of models and difficulty levels of rooms. [Easier Scope (only current notebook, minor planning, and api-key needed)]
